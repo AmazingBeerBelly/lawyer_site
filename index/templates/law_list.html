@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <title>法律法规</title>
+</head>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<div class="top_bg">
+    <div class="wrap">
+        <div class="top">
+            <h2>法律法规——{{ result.law_type }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="main mainBox">
+        {% for single_list in result.law_list %}
+        <ul class="list-group">
+            {% for item in single_list %}
+            <li class="list-group-item" onclick="location.href='{{ item.description_file.url }}'">{{ item.name }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

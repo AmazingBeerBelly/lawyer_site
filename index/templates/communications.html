@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="top_bg">
+    <div class="wrap">
+        <div class="top">
+            <h2>{{ result.communications_type }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+<div class="main mainBox">
+        <div class="blog">
+            {% for communications in result.communications_list %}
+            <div class="blog_list">
+                <h2 onclick="location.href='?communications_type={{ result.communications_type }}' + '&id=' + {{ communications.id }}"><i>{{ communications.id }}</i>{{ communications.title }}</h2>
+                <h5>{{ communications.submit_time }}</h5>
+            </div>
+            {% endfor %}
+            <!-- <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">29</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>     -->
+        </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link href="{% static 'font/font.css' %}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/slider.css' %}" />
+<script type="text/javascript" src="{% static 'js/modernizr.custom.28468.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
+<script type="text/javascript">
+    $(function() {
+    
+        $('#da-slider').cslider({
+            autoplay    : true,
+            bgincrement : 450
+        });
+    
+    });
+    
+    $(window).load(function() {
+    $("#flexiselDemo1").flexisel();
+    $("#flexiselDemo2").flexisel({
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3
+            }
+        }
+    });
+    
+    $("#flexiselDemo3").flexisel({
+        visibleItems: 5,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,            
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3
+            }
+        }
+    });
+    
+    });
+</script>
+
+<style>
+    .para{
+        font-size: 1em;
+        color: #555555;
+        line-height: 2em;
+        text-align: left;
+        text-indent: 2em;
+    }
+</style>
+
+<!---start-da-slider-->
+<div id="da-slider" class="da-slider">
+    <div class="da-slide">
+        <p><img src="{% static 'images/nav-1.png' %}" alt=""></p>
+    </div>
+    <div class="da-slide">
+        <p><img src="{% static 'images/nav-2.png' %}" alt=""></p>
+    </div>
+    <div class="da-slide">
+        <p><img src="{% static 'images/nav-3.png' %}" alt=""></p>
+    </div>
+    <div class="da-slide">
+        <p><img src="{% static 'images/nav-4.png' %}" alt=""></p>
+    </div>
+    <nav class="da-arrows">
+        <span class="da-arrows-prev"></span>
+        <span class="da-arrows-next"></span>
+    </nav>
+</div>
+<!---//End-da-slider-->
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
+<!-- start main -->
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="main_box">
+            <div class="main_pic">
+                <img src="{{ result.image_url }}" alt="">
+                <p><span>{{ result.name | safe }}律师</span><br />
+                    <span>江西南芳律师事务所主办律师</span><br />
+                    <span>水西中心小学法制副校长</span><br />
+                </p>
+            </div>
+            <div class="main_text">
+                <h2>金牌律师</h2>
+                <div class="abt-para">
+                    <div class="det_text">
+                        <div class="para">{{ result.description | safe }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start grids_of_3 -->
+        <!-- end grids_of_3 -->
+    </div>
+</div>
+<!-- start main_bg -->
+<div class="main_bg">
+    <div class="wrap">
+        <div class="main content_top">
+            <!-- start span_of_3 -->
+            <div class="grids_of_3">
+                <div class="grid1_of_3">
+                    <img src="{% static 'images/icon1.png' %}" alt=""/>
+                    <h3></h3>
+                    <p>法律服务
+                        让用户得以选“优“,用“优”，利益得到最大化满足。
+                    </p>
+                </div>
+                <div class="grid1_of_3">
+                    <img src="{% static 'images/icon2.png' %}" alt=""/>
+                    <h3></h3>
+                    <p>优质来源于我们创造的模式
+                        让法律从业者专注于创“优”,争“优”,价值得到最大化实现。
+                    </p>
+                </div>
+                <div class="grid1_of_3">
+                    <img src="{% static 'images/icon3.png' %}" alt=""/>
+                    <h3></h3>
+                    <p>优质来源于我们创造的模式
+                        利用互联网及信息技术，让用户获得法律服务变得轻而易举。
+                    </p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <ul id="flexiselDemo3">
+        <li><a href="http://www.moj.gov.cn/" target="_Blank"><img src="{% static 'images/client1.jpg' %}" /></a></li>
+        <li><a href="http://www.court.gov.cn/" target="_Blank"><img src="{% static 'images/client2.jpg' %}" /></a></li>
+        <li><a href="http://gzzy.susong51.com/" target="_Blank"><img src="{% static 'images/client3.jpg' %}" /></a></li>
+        <li><a href="http://www.ganzhou.jcy.gov.cn/" target="_Blank"><img src="{% static 'images/client4.jpg' %}" /></a></li>
+        <li><a href="http://www.jxlawyer.com/" target="_Blank"><img src="{% static 'images/client5.jpg' %}" /></a></li>
+        <li><a href="http://www.ganzhoulawyers.com/" target="_Blank"><img src="{% static 'images/client6.jpg' %}" /></a></li>
+        <li><a href="http://jxfy.chinacourt.org/index.shtml" target="_Blank"><img src="{% static 'images/client7.jpg' %}" /></a></li>
+        <li><a href="http://www.jx.jcy.gov.cn/" target="_Blank"><img src="{% static 'images/client8.jpg' %}" /></a></li>
+    </ul>
+</div>
+{% endblock %}

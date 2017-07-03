@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .para{
+        font-size: 1em;
+        color: #555555;
+        line-height: 2em;
+        text-align: left;
+        text-indent: 2em;
+    }
+</style>
+
+<head>
+    <title>律师介绍</title>
+</head>
+<div class="top_bg">
+    <div class="wrap">
+        <div class="top">
+            <h2>{{ result.about_type }}介绍 -- {{ result.name }}</h2>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="about">
+            <div class="cont-grid">
+                <div class="abt-para">
+                    <div class="det_text">
+                        <div class="para">{{ result.description | safe }}</div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="cont-grid-img img_style">
+                <a href="details.html"><img src="{% static 'images/about_pic.jpg' %}" alt=""></a>
+            </div>
+            <div class="clear"></div>
+            <div class="about-p">
+                <p class="para"></p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}

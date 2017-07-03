@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .para{
+        font-size: 1em;
+        color: #555555;
+        line-height: 2em;
+        text-align: left;
+        text-indent: 2em;
+    }
+
+    div.cont-grid {
+        width: 100%;
+    }
+</style>
+
+<div class="top_bg">
+    <div class="wrap">
+        <div class="top">
+            <h2>服务范围——{{ result.service_type }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="about">
+            <div class="cont-grid">
+                <div class="abt-para">
+                    <div class="det_text">
+                        <div class="para">{{ result.service_description | safe }}</div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}

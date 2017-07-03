@@ -1,0 +1,16 @@
+@font-face {
+    font-family: '张海山锐谐体';/* 张海山锐谐体 */
+    src: url('zhang.eot'); /* IE9 Compat Modes */
+    src: url('zhang.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('zhang.woff') format('woff'), /* Modern Browsers */
+             url('zhang.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('zhang.svg#zhang') format('svg'); /* Legacy iOS */
+   }
+@font-face {
+    font-family: '冬青黑体';/* 张海山锐谐体 */
+    src: url('dongqingheiti.eot'); /* IE9 Compat Modes */
+    src: url('dongqingheiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('dongqingheiti.woff') format('woff'), /* Modern Browsers */
+             url('dongqingheiti.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('dongqingheiti.svg#dongqingheiti') format('svg'); /* Legacy iOS */
+   }

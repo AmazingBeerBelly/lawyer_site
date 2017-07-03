@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .para{
+        font-size: 1em;
+        color: #555555;
+        line-height: 2em;
+        text-align: left;
+        text-indent: 2em;
+    }
+</style>
+
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="details">
+            <h2 class="new_title text-center">{{ data.title }}</h2>
+            <div class="new_time text-center"><span>{{ data.submit_time }}</span>&nbsp;&nbsp;<span>赣州市律师协会</span></div>
+            <div class="det_text">
+                <div class="para">{{ data.content | safe }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

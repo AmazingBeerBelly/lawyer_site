@@ -1,0 +1,211 @@
+
+.wrapLine{
+	border-bottom:2px solid #dedede;
+	overflow:hidden; 
+}
+.menu
+{
+	font-family: arial, sans-serif;
+	height:90px;
+	position:relative;
+	margin:0 auto;
+	font-size:11px;
+	position:relative;
+	font-family: "微软雅黑";
+	width:820px;
+}
+.menu ul
+{
+	padding:0;
+	margin:0 auto;
+	list-style-type: none;
+/* 	border-radius: 8px;
+-moz-border-radius:8px;
+-webkit-border-radius:8px;
+
+border: 1px solid #dbdbdb;
+overflow: hidden;
+width: 814px;
+box-shadow: 1px 1px 5px rgba(0,37,50,0.4);
+-moz-box-shadow: 1px 1px 5px rgba(0,37,50,0.4);
+-webkit-box-shadow: 1px 1px 5px rgba(0,37,50,0.4); */
+}
+.menu ul li
+{
+	float:left;
+	width:100px;
+	height: 46px;
+	line-height: 46px;
+	background: url(../images/nav_bg.png);
+	border-left:#58a5fe solid 1px;
+
+/*  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=#dbdbdb); IE 6 7 8
+
+background: -ms-linear-gradient(top, #ffffff,  #dbdbdb);      IE 10
+
+background:-moz-linear-gradient(top,#ffffff,#dbdbdb);火狐
+
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#ffffff), to(#dbdbdb));谷歌
+
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#dbdbdb));   Safari 4-5, Chrome 1-9
+
+background: -webkit-linear-gradient(top, #ffffff, #dbdbdb);  Safari5.1 Chrome 10+
+
+background: -o-linear-gradient(top, #ffffff, #dbdbdb); Opera 11.10+
+
+text-align: center;
+
+border-right:1px solid #dbdbdb;
+border-left:1px solid #ffffff;
+border-top: 1px solid #dbdbdb;
+border-bottom:1px solid #dbdbdb */
+
+}
+.menu ul li:first-child{
+/* 	border-left: 1px solid #dbdbdb; */
+	border-top-left-radius: 8px;
+    -moz-top-left-border-radius:8px;
+    -webkit-top-left-border-radius:8px;
+    border-bottom-left-radius: 8px;
+    -moz-bottom-left-border-radius:8px;
+    -webkit-bottom-left-border-radius:8px;
+    border-left: none;
+}
+.menu ul li:last-child{
+	/* border-right: 1px solid #dbdbdb; */
+	border-top-right-radius: 8px;
+    -moz-top-right-border-radius:8px;
+    -webkit-top-right-border-radius:8px;
+    border-bottom-right-radius: 8px;
+    -moz-bottom-right-border-radius:8px;
+    -webkit-bottom-right-border-radius:8px;
+}
+.menu ul li a, .menu ul li a:visited
+{
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing:3px;
+}
+.menu ul li ul
+{
+	display: none;
+}
+/* specific to non IE browsers*/
+.menu ul li:hover a,.menu ul li.active a
+{
+	color:#fff;
+	background: #fff url(../images/navhover_bg.png);
+	display: block;
+	width: 80px;
+	height: 30px;
+	margin-top: 7px;
+	margin-left:auto;
+	margin-right:auto; 
+	line-height: 30px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	letter-spacing:3px;
+
+}
+.menu ul li:hover ul
+{
+	display:block;
+	position:absolute;
+	border: none;
+	top:46px;
+	left:0;
+    box-shadow: none;
+	color:#000;
+	height: 40px;
+
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	box-shadow: 1px 1px 5px rgba(0,37,50,0.4);
+	-moz-box-shadow: 1px 1px 5px rgba(0,37,50,0.4);
+	-webkit-box-shadow: 1px 1px 5px rgba(0,37,50,0.4);
+
+}
+.menu ul li:hover ul li{
+
+ height: 40px;
+
+ line-height: 40px;
+
+ color: #0a65e0;
+
+ background: url(../images/nav_bg.png);
+
+ border-left: none
+
+	
+/*  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=#dbdbdb); IE 6 7 8
+
+background: -ms-linear-gradient(top, #ffffff,  #dbdbdb);      IE 10
+
+background:-moz-linear-gradient(top,#ffffff,#dbdbdb);火狐
+
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#ffffff), to(#dbdbdb));谷歌
+
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#dbdbdb));   Safari 4-5, Chrome 1-9
+
+background: -webkit-linear-gradient(top, #ffffff, #dbdbdb);  Safari5.1 Chrome 10+
+
+background: -o-linear-gradient(top, #ffffff, #dbdbdb); Opera 11.10+
+
+text-align: center;
+
+color:#2076e5; */
+
+}
+.menu ul li:hover ul li a
+{
+     color:#fff;
+     border: none;
+     background: none;
+     font-size: 12px;
+     line-height: 30px;
+}
+.menu ul li:hover ul li a:hover
+{
+	background:#2380fa;
+	color:#fff;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	margin-top: 8px;
+	background: #fff url(../images/navhover_bg.png);
+}
+.menu ul li:hover ul li:hover ul
+{
+	display:block;
+	position:absolute;
+	left:0;
+	top:30px;
+	color:#000;
+	background:#2380fa;
+}
+.menu ul li:hover ul.right li
+{
+	float:right;
+}
+.menu ul li:hover ul li:hover a.hide
+{
+	background:#dfc184;
+	color:#000;
+}
+.menu ul li:hover ul li:hover ul li a
+{
+	background:#dfc184;
+	color:#000;
+}
+.menu ul li:hover ul li:hover ul li a:hover
+{
+	background:#bd8d5e;
+	color:#fff;
+}

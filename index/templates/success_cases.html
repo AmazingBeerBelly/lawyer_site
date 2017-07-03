@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/page.css' %}" rel="stylesheet" type="text/css" />
+<!-- start header -->
+<!-- start top_bg -->
+<div class="top_bg">
+    <div class="wrap">
+        <div class="top">
+            <h2>成功案例</h2>
+        </div>
+    </div>
+</div>
+<!-- start main -->
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="span_of_3">
+            <div class="span1_of_3">
+                <a href="?id=1"><img src="{% static 'images/pic1.jpg' %}" alt=""></a>
+                <div class="span1_of_3_text">
+                    <h3><a href="details.html">原告诉市人力资源和社会保障局社会保障行政确认纠纷案件</a></h3>
+                    <p>原告丈夫2016年3月17日下午17时，在公司上班时突然生病头痛，但吃完晚饭后继续上班，但是头痛难忍，加班至20时就顶不住了，回隔壁家中休息...</p>
+                </div>
+                <div class="ser_btn">
+                    <a class="button  ser_btn1" href="?id=1">查看详情</a>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

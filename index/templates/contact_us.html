@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="top_bg">
+    <div class="wrap">
+        <div class="top">
+            <h2>联系我们</h2>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="contact">
+            <div class="about">
+                <span class="adr_img">
+                    <img src="{% static 'images/adreddsimg1.png' %}" alt="">
+                </span>
+                <span class="adr_img">
+                    <img src="{% static 'images/adreddsimg2.png' %}" alt="">
+                </span>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div>
+                        <span><label>姓名</label></span>
+                        <span><input name="name" type="text" class="textbox"></span>
+                    </div>
+                    <div>
+                        <span><label>邮箱</label></span>
+                        <span><input name="email" type="text" class="textbox"></span>
+                    </div>
+                    <div>
+                        <span><label>电话</label></span>
+                        <span><input name="phone" type="text" class="textbox"></span>
+                    </div>
+                    <div>
+                        <span><label>咨询内容</label></span>
+                        <span><textarea name="content"> </textarea></span>
+                    </div>
+                    <div>
+                        <span><input type="submit" class="" value="发送"></span>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="clear"> </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

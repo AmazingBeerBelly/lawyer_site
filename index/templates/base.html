@@ -1,0 +1,183 @@
+<!DOCTYPE HTML> {% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="{% static 'css/fonts_google_apis.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <!-- start top_js_button -->
+        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+                });
+            });
+        </script>
+        <style>
+            .span1_of_3_text h3{ height: 45px; }
+        </style>
+        <link href="{% static 'css/nav.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/page.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="headBox">
+            <div class="headmain">
+                <div class="h_search">
+                </div>
+                <div class="headFont">赣州律师网<span>联系电话：18046661308</span></div>
+            </div>
+        </div>
+        <div class="wrap wrapLine">
+            <div class="h_menu">
+                <div class="menu">
+                    <ul class="down">
+                        <li class="active"><a href="/index/">首页</a></li>
+                        <li>
+                            <a href="/about_us/?about_type=律师个人">律师介绍</a>
+                            <ul class="" style="left:102px;">
+                                <li><a href="/about_us/?about_type=律师个人">律师个人</a></li>
+                                <li><a href="/about_us/?about_type=专业团队">专业团队</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/service/?service_type=诉讼业务">律师服务</a>
+                            <ul class="" style="left:204px;">
+                                <li><a href="/service/?service_type=诉讼业务">诉讼业务</a></li>
+                                <li><a href="/service/?service_type=非诉业务">非诉业务</a></li>
+                                <li><a href="/service/?service_type=委托流程">委托流程</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/success_cases/">成功案例</a>
+                            <ul class="" style="left:306px;">
+                                <li><a href="/success_cases/">律师案例</a></li>
+                                <li><a href="/success_cases/">经典案例</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/law_list/?law_type=法律规定">法律法规</a>
+                            <ul class="" style="left:306px;">
+                                <li><a href="/law_list/?law_type=法律规定">法律规定</a></li>
+                                <li><a href="/law_list/?law_type=行政法规">行政法规</a></li>
+                                <li><a href="/law_list/?law_type=司法解释">司法解释</a></li>
+                                <li><a href="/law_list/?law_type=其他规定">其他规定</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/news/?news_type=行业动态">法律新闻</a>
+                            <ul class="" style="left:408px;">
+                                <li><a href="/news/?news_type=行业动态">行业动态</a></li>
+                                <li><a href="/news/?news_type=法治社会">法治社会</a></li>
+                                <li><a href="/news/?news_type=法律前沿">法律前沿</a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/communications/?communications_type=业务交流">律师交流</a>
+                            <ul class="" style="left:510px;">
+                                <li><a href="/communications/?communications_type=业务交流">业务交流</a></li>
+                                <li><a href="/communications/?communications_type=活动交流">活动交流</a></li>
+                            </ul>
+                        </li>
+                        <li class=""><a href="/contact_us/">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+
+        <!-- start main_bg -->
+        <div class="main_bg">
+            <div class="wrap">
+                <div class="main content_top">
+                    <!-- start span_of_3 -->
+                    <div class="grids_of_3">
+                        <div class="grid1_of_3">
+                            <img src="{% static 'images/icon1.png' %}" alt=""/>
+                            <h3></h3>
+                            <p>法律服务
+                                让用户得以选“优“,用“优”，利益得到最大化满足。
+                            </p>
+                        </div>
+                        <div class="grid1_of_3">
+                            <img src="{% static 'images/icon2.png' %}" alt=""/>
+                            <h3></h3>
+                            <p>优质来源于我们创造的模式
+                                让法律从业者专注于创“优”,争“优”,价值得到最大化实现。
+                            </p>
+                        </div>
+                        <div class="grid1_of_3">
+                            <img src="{% static 'images/icon3.png' %}" alt=""/>
+                            <h3></h3>
+                            <p>优质来源于我们创造的模式
+                                利用互联网及信息技术，让用户获得法律服务变得轻而易举。
+                            </p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!--  -->
+                    <!-- end grids_of_3 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_bg">
+        <div class="wrap">
+            <div class="footer">
+                <div class="span_of_4">
+                    <div class="span1_of_4">
+                        <h4>
+                            <p class="btm1 mail"><a href="mailto:info@mycompany.com">455366592@qq.com</a></p>
+                        </h4>
+                    </div>
+                    <div class="span1_of_4">
+                        <h4>
+                            <p class="call">0797-8151804</p>
+                        </h4>
+                    </div>
+                    <div class="span1_of_4">
+                        <h4>
+                            <p class="pho">18046661308</p>
+                        </h4>
+                    </div>
+                    <div class="span1_of_4">
+                        <h4>
+                            <p class="btm1 pin">江西省赣州市章贡区章江北大道111号</p>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bg1">
+            <div class="wrap">
+                <div class="footer1">
+                    <!-- scroll_top_btn -->
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        
+                            var defaults = {
+                                containerID: 'toTop', // fading element id
+                                containerHoverID: 'toTopHover', // fading element hover id
+                                scrollSpeed: 1200,
+                                easingType: 'linear' 
+                            };
+                            
+                            
+                            $().UItoTop({ easingType: 'easeOutQuart' });
+                            
+                        });
+                    </script>
+                    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+                    <!--end scroll_top_btn -->
+                    <div>
+                        <p class="bqsy">2017 © 版权所有 {{ result.name | safe }}律师</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
