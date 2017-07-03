@@ -93,9 +93,6 @@ def contact_us_view(request):
 
 def law_list_view(request):
     law_type = request.GET.get('law_type', '')
-    result = {}
-    result['law_type'] = law_type
-
     law_list = []
 
     if law_type == u'法律规定':
@@ -111,36 +108,63 @@ def law_list_view(request):
         other_provisions_list = OtherProvisions.objects.all()
         law_list = other_provisions_list
 
-    # print law_list
-
-    index = 1
+    index = 0
     result_list = []
     single_list = []
     for law in law_list:
-        if index % 5 == 0:
-            single_list.append(law)
-            if single_list:
-                result_list.append(single_list)
-                print result_list
-            single_list = []
-        else:
-            single_list.append(law)
+        single_list.append(law)
         index = index + 1
+
+        if index % 5 == 0:
+            result_list.append(single_list)
+            single_list = []
 
     if index % 5 != 0:
         result_list.append(single_list)
 
+    result = {}
+    result['law_type'] = law_type
     result['law_list'] = result_list
-
-    print result_list
 
     return render(request, 'law_list.html', {'result': result})
 
 def success_cases_view(request):
+    case_type = request.GET.get('case_type', '')
     case_id = request.GET.get('id', '')
-    if case_id:
-        return render(request, 'case_detail.html', {})
-    return render(request, 'success_cases.html', {})
+
+    if case_type == u'律师案例':
+        case_list = LawyerCase.objects.all()
+
+        if case_id:
+            case = LawyerCase.objects.filter(pk=case_id).first()
+            return render(request, 'case_detail.html', {'data': case, 'case_type': case_type})
+
+    else:
+        case_list = ClassicCase.objects.all()
+
+        if case_id:
+            case = ClassicCase.objects.filter(pk=case_id).first()
+            return render(request, 'case_detail.html', {'data': case, 'case_type': case_type})
+
+    index = 0
+    result_list = []
+    single_list = []
+    for case in case_list:
+        single_list.append(case)
+        index = index + 1
+
+        if index % 3 == 0:
+            result_list.append(single_list)
+            single_list = []
+
+    if index % 3 != 0:
+        result_list.append(single_list)
+
+    result = {}
+    result['case_type'] = case_type
+    result['case_list'] = result_list
+
+    return render(request, 'success_cases.html', {'result': result})
 
 
 def communications_view(request):

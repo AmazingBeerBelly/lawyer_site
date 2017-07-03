@@ -37,6 +37,7 @@ class LawService(models.Model):
 # Success Cases
 class Case(models.Model):
     title = models.CharField(max_length=50, blank=True, verbose_name="标题")
+    image = models.ImageField(upload_to="photo/", blank=True, verbose_name="案例图片")
     content = models.TextField(verbose_name="内容")
 
     class Meta:
