@@ -17,7 +17,7 @@
         <div class="span_of_3">
             {% for case in single_list %}
             <div class="span1_of_3">
-                <a href="?case_type={{ result.case_type }}&id={{ case.id }}">
+                <a href="?case_type={{ result.case_type }}&id={{ case.id }}" class="su_img">
                     {% if case.image %}
                         <img src="{{ case.image.url }}" alt=""></a>
                     {% else %}
