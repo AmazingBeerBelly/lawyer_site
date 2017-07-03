@@ -34,7 +34,13 @@
                 <div class="clear"></div>
             </div>
             <div class="cont-grid-img img_style">
-                <a href="details.html"><img src="{% static 'images/about_pic.jpg' %}" alt=""></a>
+                <a href="details.html">
+                    {% if result.image_url %}
+                        <img src="{{ result.image_url }}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/about_pic.jpg' %}" alt="">
+                    {% endif %}
+                </a>
             </div>
             <div class="clear"></div>
             <div class="about-p">

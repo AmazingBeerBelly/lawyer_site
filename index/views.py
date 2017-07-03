@@ -38,6 +38,7 @@ def about_us_view(request):
         lawyer = Lawyer.objects.all().first()
         result['name'] = lawyer.name
         result['description'] = lawyer.description
+        result['image_url'] = lawyer.image.url
     else:
         lawyer_team = LawyerTeam.objects.all().first()
         result['name'] = lawyer_team.name
