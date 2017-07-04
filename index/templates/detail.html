@@ -12,13 +12,15 @@
     }
 </style>
 
-<div class="wrap">
-    <div class="main mainBox">
-        <div class="details">
-            <h2 class="new_title text-center">{{ data.title }}</h2>
-            <div class="new_time text-center"><span>{{ data.submit_time }}</span>&nbsp;&nbsp;<span>赣州市律师协会</span></div>
-            <div class="det_text">
-                <div class="para">{{ data.content | safe }}</div>
+<div class="top_bg">
+    <div class="wrap">
+        <div class="main mainBox">
+            <div class="details">
+                <h2 class="new_title text-center">{{ data.title }}</h2>
+                <div class="new_time text-center"><span>{{ data.submit_time }}</span>&nbsp;&nbsp;<span>赣州市律师协会</span></div>
+                <div class="det_text">
+                    <div class="para">{{ data.content | safe }}</div>
+                </div>
             </div>
         </div>
     </div>

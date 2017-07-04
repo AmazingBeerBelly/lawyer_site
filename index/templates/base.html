@@ -5,17 +5,86 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="{% static 'css/fonts_google_apis.css' %}" rel="stylesheet" type="text/css" media="all" />
         <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-        <!-- start top_js_button -->
         <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+        <link href="{% static 'font/font.css' %}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slider.css' %}" />
+        <script type="text/javascript" src="{% static 'js/modernizr.custom.28468.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.cslider.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
         <script type="text/javascript">
+            var menu_id_list = ["index_menu", "lawyer_menu", "service_menu", "case_menu", "law_menu", "news_menu", "communications_menu", "contact_menu"];
+
+            $(function() {
+            
+                $('#da-slider').cslider({
+                    autoplay    : true,
+                    bgincrement : 450
+                });
+            
+            });
+            
+            $(window).load(function() {
+            $("#flexiselDemo1").flexisel();
+            $("#flexiselDemo2").flexisel({
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: { 
+                    portrait: { 
+                        changePoint:480,
+                        visibleItems: 1
+                    }, 
+                    landscape: { 
+                        changePoint:640,
+                        visibleItems: 2
+                    },
+                    tablet: { 
+                        changePoint:768,
+                        visibleItems: 3
+                    }
+                }
+            });
+            
+            $("#flexiselDemo3").flexisel({
+                visibleItems: 5,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,            
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: { 
+                    portrait: { 
+                        changePoint:480,
+                        visibleItems: 1
+                    }, 
+                    landscape: { 
+                        changePoint:640,
+                        visibleItems: 2
+                    },
+                    tablet: { 
+                        changePoint:768,
+                        visibleItems: 3
+                    }
+                }
+            });
+            
+            });
+
             jQuery(document).ready(function($) {
                 $(".scroll").click(function(event){
                     event.preventDefault();
                     $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
                 });
             });
+
+            function button_click(id) {
+                alert(1);
+                for (index in menu_id_list) {
+                    var menu_id = menu_id_list[index];
+                    // $("#" + menu_id).css("background-color", "yellow");
+                }
+                $("#" + id).css("background-color", "#fff");
+            }
         </script>
         <style>
             .span1_of_3_text h3{ height: 45px; }
@@ -35,16 +104,16 @@
             <div class="h_menu">
                 <div class="menu">
                     <ul class="down">
-                        <li class="active"><a href="/index/">首页</a></li>
+                        <li class="active"><a href="/index/" id="index_menu">首页</a></li>
                         <li>
-                            <a href="/about_us/?about_type=律师个人">律师介绍</a>
+                            <a href="/about_us/?about_type=律师个人" id="lawyer_menu">律师介绍</a>
                             <ul class="" style="left:102px;">
-                                <li><a href="/about_us/?about_type=律师个人">律师个人</a></li>
+                                <li><a href="/about_us/?about_type=律师个人" onclick="button_click('lawyer_menu')">律师个人</a></li>
                                 <li><a href="/about_us/?about_type=专业团队">专业团队</a></li>
                             </ul>
                         </li>
                         <li class="">
-                            <a href="/service/?service_type=诉讼业务">律师服务</a>
+                            <a href="/service/?service_type=诉讼业务" id="service_menu">律师服务</a>
                             <ul class="" style="left:204px;">
                                 <li><a href="/service/?service_type=诉讼业务">诉讼业务</a></li>
                                 <li><a href="/service/?service_type=非诉业务">非诉业务</a></li>
@@ -52,14 +121,14 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a href="/success_cases/?case_type=律师案例">成功案例</a>
+                            <a href="/success_cases/?case_type=律师案例" id="case_menu">成功案例</a>
                             <ul class="" style="left:306px;">
                                 <li><a href="/success_cases/?case_type=律师案例">律师案例</a></li>
                                 <li><a href="/success_cases/?case_type=经典案例">经典案例</a></li>
                             </ul>
                         </li>
                         <li class="">
-                            <a href="/law_list/?law_type=法律规定">法律法规</a>
+                            <a href="/law_list/?law_type=法律规定" id="law_menu">法律法规</a>
                             <ul class="" style="left:306px;">
                                 <li><a href="/law_list/?law_type=法律规定">法律规定</a></li>
                                 <li><a href="/law_list/?law_type=行政法规">行政法规</a></li>
@@ -68,7 +137,7 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a href="/news/?news_type=行业动态">法律新闻</a>
+                            <a href="/news/?news_type=行业动态" id="news_menu">法律新闻</a>
                             <ul class="" style="left:408px;">
                                 <li><a href="/news/?news_type=行业动态">行业动态</a></li>
                                 <li><a href="/news/?news_type=法治社会">法治社会</a></li>
@@ -76,13 +145,13 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a href="/communications/?communications_type=业务交流">律师交流</a>
+                            <a href="/communications/?communications_type=业务交流" id="communications_menu">律师交流</a>
                             <ul class="" style="left:510px;">
                                 <li><a href="/communications/?communications_type=业务交流">业务交流</a></li>
                                 <li><a href="/communications/?communications_type=活动交流">活动交流</a></li>
                             </ul>
                         </li>
-                        <li class=""><a href="/contact_us/">联系我们</a></li>
+                        <li class=""><a href="/contact_us/" id="contact_menu">联系我们</a></li>
                     </ul>
                 </div>
             </div>
@@ -119,10 +188,21 @@
                         </div>
                         <div class="clear"></div>
                     </div>
-                    <!--  -->
-                    <!-- end grids_of_3 -->
                 </div>
             </div>
+        </div>
+
+        <div class="wrap">
+            <ul id="flexiselDemo3">
+                <li><a href="http://www.moj.gov.cn/" target="_Blank"><img src="{% static 'images/client1.jpg' %}" /></a></li>
+                <li><a href="http://www.court.gov.cn/" target="_Blank"><img src="{% static 'images/client2.jpg' %}" /></a></li>
+                <li><a href="http://gzzy.susong51.com/" target="_Blank"><img src="{% static 'images/client3.jpg' %}" /></a></li>
+                <li><a href="http://www.ganzhou.jcy.gov.cn/" target="_Blank"><img src="{% static 'images/client4.jpg' %}" /></a></li>
+                <li><a href="http://www.jxlawyer.com/" target="_Blank"><img src="{% static 'images/client5.jpg' %}" /></a></li>
+                <li><a href="http://www.ganzhoulawyers.com/" target="_Blank"><img src="{% static 'images/client6.jpg' %}" /></a></li>
+                <li><a href="http://jxfy.chinacourt.org/index.shtml" target="_Blank"><img src="{% static 'images/client7.jpg' %}" /></a></li>
+                <li><a href="http://www.jx.jcy.gov.cn/" target="_Blank"><img src="{% static 'images/client8.jpg' %}" /></a></li>
+            </ul>
         </div>
 
         <div class="footer_bg">
