@@ -526,8 +526,7 @@ p.para{
 	margin-left: 0;
 }
 .span1_of_3 img{
-	height: 205px;
-	width: 368px;
+	width:100%;
 }
 .span1_of_3 a.su_img{
 	display: block;
@@ -588,6 +587,16 @@ p.para{
 	cursor: pointer;
 	position: relative;
 	line-height: 0px;
+}
+#flexiselDemo3{
+	overflow: hidden;
+	height:72px;
+
+}
+#flexiselDemo3>li{
+	float: left;
+	width: 205px;
+	margin-left: 5px;
 }
 .nbs-flexisel-item  img {
 	width:200px;
@@ -1048,9 +1057,10 @@ span.adr_img{
 }
 .det_pic{
 	margin: 2% 0;
-	text-align: center;
 }
 .det_pic>img{
+	width: 300px;
+	float: left;
 	margin-right: 20px;
 }
 /* page */
