@@ -14,8 +14,6 @@
         <script type="text/javascript" src="{% static 'js/jquery.cslider.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
         <script type="text/javascript">
-            var menu_id_list = ["index_menu", "lawyer_menu", "service_menu", "case_menu", "law_menu", "news_menu", "communications_menu", "contact_menu"];
-
             $(function() {
             
                 $('#da-slider').cslider({
@@ -75,16 +73,17 @@
                     event.preventDefault();
                     $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
                 });
-            });
 
-            function button_click(id) {
-                alert(1);
+                var menu_id_list = ["index_menu", "service_menu", "lawyer_menu", "case_menu", "law_menu", "news_menu", "communication_menu", "contact_menu"];
+                var select_menu_id = $("#menu").val();
+
                 for (index in menu_id_list) {
                     var menu_id = menu_id_list[index];
-                    // $("#" + menu_id).css("background-color", "yellow");
+                    // $("#" + menu_id).removeClass("active");
                 }
-                $("#" + id).css("background-color", "#fff");
-            }
+
+                $("#" + select_menu_id).addClass("active");
+            });
         </script>
         <style>
             .span1_of_3_text h3{ height: 45px; }
@@ -93,6 +92,7 @@
         <link href="{% static 'css/page.css' %}" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <input hidden id="menu" value="{{ menu }}"></input>
         <div class="headBox">
             <div class="headmain">
                 <div class="h_search">
@@ -108,7 +108,7 @@
                         <li>
                             <a href="/about_us/?about_type=律师个人" id="lawyer_menu">律师介绍</a>
                             <ul class="" style="left:102px;">
-                                <li><a href="/about_us/?about_type=律师个人" onclick="button_click('lawyer_menu')">律师个人</a></li>
+                                <li><a href="/about_us/?about_type=律师个人">律师个人</a></li>
                                 <li><a href="/about_us/?about_type=专业团队">专业团队</a></li>
                             </ul>
                         </li>
@@ -145,7 +145,7 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a href="/communications/?communications_type=业务交流" id="communications_menu">律师交流</a>
+                            <a href="/communications/?communications_type=业务交流" id="communication_menu">律师交流</a>
                             <ul class="" style="left:510px;">
                                 <li><a href="/communications/?communications_type=业务交流">业务交流</a></li>
                                 <li><a href="/communications/?communications_type=活动交流">活动交流</a></li>

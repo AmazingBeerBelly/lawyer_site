@@ -27,11 +27,13 @@ def index_view(request):
     result['name'] = lawyer.name
     result['image_url'] = lawyer.image.url
     result['description'] = lawyer.description
-    return render(request, 'index.html', {'result': result})
+    menu = "index_menu"
+    return render(request, 'index.html', {'result': result, 'menu': menu})
 
 def about_us_view(request):
     about_type = request.GET.get('about_type', '')
 
+    menu = "lawyer_menu"
     result = {}
     result['about_type'] = about_type
     if about_type == u'律师个人':
@@ -43,43 +45,45 @@ def about_us_view(request):
         lawyer_team = LawyerTeam.objects.all().first()
         result['name'] = lawyer_team.name
         result['description'] = lawyer_team.description
-    return render(request, 'about_us.html', {'result': result})
+    return render(request, 'about_us.html', {'result': result, 'menu': menu})
 
 def service_view(request):
     service_type = request.GET.get('service_type', '')
     service = LawService.objects.filter(service_type=service_type).first()
 
+    menu = "service_menu"
     result = {}
     result['service_type'] = service_type
     result['service_description'] = service.description
-    return render(request, 'service.html', {'result': result})
+    return render(request, 'service.html', {'result': result, 'menu': menu})
 
 def news_view(request):
     news_type = request.GET.get('news_type', '')
     news_id = request.GET.get('id', '')
     news_list = []
+    menu = "news_menu"
 
     if news_type == u'行业动态':
         news_list = IndustryNews.objects.all()
         if news_id:
             news = IndustryNews.objects.filter(pk=news_id).first()
-            return render(request, 'detail.html', {'data': news})
+            return render(request, 'detail.html', {'data': news, 'menu': menu})
     elif news_type == u'法治社会':
         news_list = SociologyNews.objects.all()
         if news_id:
             news = SociologyNews.objects.filter(pk=news_id).first()
-            return render(request, 'detail.html', {'data': news})
+            return render(request, 'detail.html', {'data': news, 'menu': menu})
     else:
         news_list = LawNews.objects.all()
         if news_id:
             news = LawNews.objects.filter(pk=news_id).first()
-            return render(request, 'detail.html', {'data': news})
+            return render(request, 'detail.html', {'data': news, 'menu': menu})
 
     result = {}
     result['news_type'] = news_type
     result['news_list'] = news_list
 
-    return render(request, 'news.html', {'result': result})
+    return render(request, 'news.html', {'result': result, 'menu': menu})
 
 def contact_us_view(request):
     if request.method == 'POST':
@@ -90,7 +94,9 @@ def contact_us_view(request):
 
         add_message(name, phone, email, content)
         
-    return render(request, 'contact_us.html', {})
+    menu = "contact_menu"
+
+    return render(request, 'contact_us.html', {'menu': menu})
 
 def law_list_view(request):
     law_type = request.GET.get('law_type', '')
@@ -123,29 +129,32 @@ def law_list_view(request):
     if index % 5 != 0:
         result_list.append(single_list)
 
+    menu = "law_menu"
     result = {}
     result['law_type'] = law_type
     result['law_list'] = result_list
 
-    return render(request, 'law_list.html', {'result': result})
+    return render(request, 'law_list.html', {'result': result, 'menu': menu})
 
 def success_cases_view(request):
     case_type = request.GET.get('case_type', '')
     case_id = request.GET.get('id', '')
+
+    menu = "case_menu"
 
     if case_type == u'律师案例':
         case_list = LawyerCase.objects.all()
 
         if case_id:
             case = LawyerCase.objects.filter(pk=case_id).first()
-            return render(request, 'case_detail.html', {'data': case, 'case_type': case_type})
+            return render(request, 'case_detail.html', {'data': case, 'case_type': case_type, 'menu': menu})
 
     else:
         case_list = ClassicCase.objects.all()
 
         if case_id:
             case = ClassicCase.objects.filter(pk=case_id).first()
-            return render(request, 'case_detail.html', {'data': case, 'case_type': case_type})
+            return render(request, 'case_detail.html', {'data': case, 'case_type': case_type, 'menu': menu})
 
     index = 0
     result_list = []
@@ -165,32 +174,33 @@ def success_cases_view(request):
     result['case_type'] = case_type
     result['case_list'] = result_list
 
-    return render(request, 'success_cases.html', {'result': result})
+    return render(request, 'success_cases.html', {'result': result, 'menu': menu})
 
 
 def communications_view(request):
     communications_type = request.GET.get('communications_type', '')
     communications_id = request.GET.get('id', '')
     communications_list = []
+    menu = "communications_menu"
 
     if communications_type == u'业务交流':
         communications_list = Business.objects.all()
 
         if communications_id:
             communications = Business.objects.filter(pk=communications_id).first()
-            return render(request, 'detail.html', {'data': communications})
+            return render(request, 'detail.html', {'data': communications, 'menu': menu})
     else:
         communications_list = Activity.objects.all()
 
         if communications_id:
             communications = Activity.objects.filter(pk=communications_id).first()
-            return render(request, 'detail.html', {'data': communications})
+            return render(request, 'detail.html', {'data': communications, 'menu': menu})
 
     result = {}
     result['communications_type'] = communications_type
     result['communications_list'] = communications_list
 
-    return render(request, 'communications.html', {'result': result})
+    return render(request, 'communications.html', {'result': result, 'menu': menu})
 
 
 @csrf_exempt
