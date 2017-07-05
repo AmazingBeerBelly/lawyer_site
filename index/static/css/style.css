@@ -76,7 +76,7 @@ background-size: 100% 100%; */
 
 /* 版权所有 */
 .bqsy{
-	width: 220px;
+	width: 320px;
 	margin:0 auto; 
 	text-align: center;
 	line-height: 2em;
@@ -790,7 +790,7 @@ big {
 }
 .cont-grid {
 	float: left;
-	width: 60.3333%;
+	width: 66.3333%;
 }
 .cont-grid h3,.about-p h3{
     font-weight:bold;
@@ -800,19 +800,19 @@ big {
 }
 .cont-grid-img{
 	margin-left: 3.3333%;
-	width: 36.33333%;
+	width: 30.33333%;
 	float:left;
 	overflow: hidden;
 }
 .cont-grid-img>a{
-    width: 80%;
+    width: 100%;
 	overflow: hidden;
 	display: block;
 
 }
 .cont-grid-img img{
-	margin-top: 15%;
-	width: 85%;
+	margin-top: 10%;
+	width: 100%;
 	border-radius: 270px;
 	-webkit-border-radius: 270px;
 	-moz-border-radius: 270px;
@@ -928,8 +928,8 @@ span.adr_img{
     text-align: center;
     font-size: 12px;
     line-height: 24px;
-    margin-right: 4px;
-    margin-top:2px;
+    margin-right: 10px;
+    margin-top:4px;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -951,6 +951,7 @@ span.adr_img{
 	text-transform: capitalize;
 	color: #444;
 	text-shadow: 0 1px 0 #ffffff;
+    font-family: "仿宋";
 }
 .blog_list h5 a{
 	color: #00BAC6;
@@ -1162,8 +1163,32 @@ span.adr_img{
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+/***** Media 所有font的格式调整 *****/
+/***** index个人简介格式 *****/
+.index_font{
+	font-size: 1.2em;
+	line-height: 3em;
+    text-align: left;
+    color: #555555;
+    text-indent: 2em;
+    font-family: "仿宋";
+}
+.service_font,.news_font{
+	font-size: 1em;
+	line-height: 1.8em;
+    text-align: left;
+    color: #555555;
+    text-indent: 2em;
+    font-family: "仿宋";
+}
+/***** Media Quries *****/
+/***** Media Quries *****/
+/***** Media Quries *****/
 /***** Media Quries *****/
 @media only screen and (max-width: 1920px) {
+    .mb4p{
+        margin-bottom: 4%;
+    }
 	.wrap{
 		width:80%;
 		min-height: 
@@ -1172,7 +1197,7 @@ span.adr_img{
 	padding: 0;
 } 
     .mainBox{
-    	min-height: 552px;
+    	min-height: 450px;
     }
 }
 @media only screen and (max-width: 1366px) {
@@ -1183,7 +1208,7 @@ span.adr_img{
 	padding: 0;
 } 
 .mainBox{
-	min-height: 370px;
+	min-height: 320px;
 }
 }
 @media only screen and (max-width: 1280px) {
@@ -1366,3 +1391,4 @@ span.adr_img{
 		top: -20px;
 	}
 }
+
