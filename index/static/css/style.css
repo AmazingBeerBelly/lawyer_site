@@ -1200,6 +1200,32 @@ span.adr_img{
     	min-height: 450px;
     }
 }
+@media only screen and (max-width: 1440px) {
+   .index_font{
+	font-size: 1.2em;
+	line-height: 2em;
+    text-align: left;
+    color: #555555;
+    text-indent: 2em;
+    font-family: "仿宋";
+}
+}
+@media only screen and (max-width: 1440px) {
+.index_font{
+	font-size: 1.2em;
+	line-height: 2em;
+    text-align: left;
+    color: #555555;
+    text-indent: 2em;
+    font-family: "仿宋";
+}
+    .h_menu{
+        width: 71%;
+    }
+    .span1_of_4:nth-child(4){
+        width: 37%;
+    }
+}
 @media only screen and (max-width: 1366px) {
 	.wrap{
 		width:95%;
