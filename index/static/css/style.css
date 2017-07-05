@@ -1209,6 +1209,23 @@ span.adr_img{
 } 
 .mainBox{
 	min-height: 320px;
+        }
+/***** index个人简介格式 *****/
+.index_font{
+	font-size: 1.2em;
+	line-height: 2.2em;
+    text-align: left;
+    color: #555555;
+    text-indent: 2em;
+    font-family: "仿宋";
+}
+.service_font,.news_font{
+	font-size: 1em;
+	line-height: 1.8em;
+    text-align: left;
+    color: #555555;
+    text-indent: 2em;
+    font-family: "仿宋";
 }
 }
 @media only screen and (max-width: 1280px) {
