@@ -60,30 +60,77 @@ def service_view(request):
 def news_view(request):
     news_type = request.GET.get('news_type', '')
     news_id = request.GET.get('id', '')
+    page_num = request.GET.get('page_num', '1')
+    page_num = int(page_num)
     news_list = []
     menu = "news_menu"
 
     if news_type == u'行业动态':
-        news_list = IndustryNews.objects.all()
+        news_list = IndustryNews.objects.all().order_by("-id")
         if news_id:
             news = IndustryNews.objects.filter(pk=news_id).first()
             return render(request, 'detail.html', {'data': news, 'menu': menu})
     elif news_type == u'法治社会':
-        news_list = SociologyNews.objects.all()
+        news_list = SociologyNews.objects.all().order_by("-id")
         if news_id:
             news = SociologyNews.objects.filter(pk=news_id).first()
             return render(request, 'detail.html', {'data': news, 'menu': menu})
     else:
-        news_list = LawNews.objects.all()
+        news_list = LawNews.objects.all().order_by("-id")
         if news_id:
             news = LawNews.objects.filter(pk=news_id).first()
             return render(request, 'detail.html', {'data': news, 'menu': menu})
 
+    temp_news_list = []
+    index = 1
+    for news in news_list:
+        temp_news_list.append((index, news))
+        index = index + 1
+
+    news_list = temp_news_list
+
+    index = 0
+    result_list = []
+    single_list = []
+    for news in news_list:
+        single_list.append(news)
+        index = index + 1
+
+        if index % 10 == 0:
+            result_list.append(single_list)
+            single_list = []
+
+    if index % 10 != 0:
+        result_list.append(single_list)
+
     result = {}
     result['news_type'] = news_type
-    result['news_list'] = news_list
+    result['news_list'] = result_list[page_num - 1]
 
-    return render(request, 'news.html', {'result': result, 'menu': menu})
+    page_len = len(result_list)
+    page_start = 1
+    page_end = page_len
+    jump = {}
+
+    if page_num > 2:
+        page_start = page_num - 2
+    if (page_len - page_num) > 2:
+        page_end = page_num + 1
+
+    if page_start > 1:
+        jump["left_ellipsis"] = True
+    if page_end < page_len:
+        jump["right_ellipsis"] = True
+
+    if page_num != 1:
+        jump["pre_page"] = True
+    if page_num != page_len:
+        jump["next_page"] = True
+
+    page_range = range(page_start, page_end + 1)
+
+    return render(request, 'news.html', {'result': result, 'menu': menu, 'page_range': page_range, 'current_page': page_num, 
+                                        'jump': jump})
 
 def contact_us_view(request):
     if request.method == 'POST':
@@ -139,22 +186,32 @@ def law_list_view(request):
 def success_cases_view(request):
     case_type = request.GET.get('case_type', '')
     case_id = request.GET.get('id', '')
+    page_num = request.GET.get('page_num', '1')
+    page_num = int(page_num)
 
     menu = "case_menu"
 
     if case_type == u'律师案例':
-        case_list = LawyerCase.objects.all()
+        case_list = LawyerCase.objects.all().order_by('-id')
 
         if case_id:
             case = LawyerCase.objects.filter(pk=case_id).first()
             return render(request, 'case_detail.html', {'data': case, 'case_type': case_type, 'menu': menu})
 
     else:
-        case_list = ClassicCase.objects.all()
+        case_list = ClassicCase.objects.all().order_by('id')
 
         if case_id:
             case = ClassicCase.objects.filter(pk=case_id).first()
             return render(request, 'case_detail.html', {'data': case, 'case_type': case_type, 'menu': menu})
+
+    temp_case_list = []
+    index = 1
+    for case in case_list:
+        temp_case_list.append((index, case))
+        index = index + 1
+
+    case_list = temp_case_list
 
     index = 0
     result_list = []
@@ -163,44 +220,136 @@ def success_cases_view(request):
         single_list.append(case)
         index = index + 1
 
-        if index % 3 == 0:
+        if index % 10 == 0:
             result_list.append(single_list)
             single_list = []
 
-    if index % 3 != 0:
+    if index % 10 != 0:
         result_list.append(single_list)
 
     result = {}
     result['case_type'] = case_type
-    result['case_list'] = result_list
+    result['case_list'] = result_list[page_num - 1]
 
-    return render(request, 'success_cases.html', {'result': result, 'menu': menu})
+    page_len = len(result_list)
+    page_start = 1
+    page_end = page_len
+    jump = {}
+
+    if page_num > 2:
+        page_start = page_num - 2
+    if (page_len - page_num) > 2:
+        page_end = page_num + 1
+
+    if page_start > 1:
+        jump["left_ellipsis"] = True
+    if page_end < page_len:
+        jump["right_ellipsis"] = True
+
+    if page_num != 1:
+        jump["pre_page"] = True
+    if page_num != page_len:
+        jump["next_page"] = True
+
+    page_range = range(page_start, page_end + 1)
+
+    return render(request, 'success_cases.html', {'result': result, 'menu': menu, 'page_range': page_range, 'current_page': page_num, 
+                                        'jump': jump})
+
+
+
+    # index = 0
+    # result_list = []
+    # single_list = []
+    # for case in case_list:
+    #     single_list.append(case)
+    #     index = index + 1
+
+    #     if index % 3 == 0:
+    #         result_list.append(single_list)
+    #         single_list = []
+
+    # if index % 3 != 0:
+    #     result_list.append(single_list)
+
+    # result = {}
+    # result['case_type'] = case_type
+    # result['case_list'] = result_list
+
+    # return render(request, 'success_cases.html', {'result': result, 'menu': menu})
 
 
 def communications_view(request):
     communications_type = request.GET.get('communications_type', '')
     communications_id = request.GET.get('id', '')
     communications_list = []
+    page_num = request.GET.get('page_num', '1')
+    page_num = int(page_num)
     menu = "communications_menu"
 
     if communications_type == u'业务交流':
-        communications_list = Business.objects.all()
+        communications_list = Business.objects.all().order_by("-id")
 
         if communications_id:
             communications = Business.objects.filter(pk=communications_id).first()
             return render(request, 'detail.html', {'data': communications, 'menu': menu})
     else:
-        communications_list = Activity.objects.all()
+        communications_list = Activity.objects.all().order_by("-id")
 
         if communications_id:
             communications = Activity.objects.filter(pk=communications_id).first()
             return render(request, 'detail.html', {'data': communications, 'menu': menu})
 
+    temp_communications_list = []
+    index = 1
+    for communications in communications_list:
+        temp_communications_list.append((index, communications))
+        index = index + 1
+
+    communications_list = temp_communications_list
+
+    index = 0
+    result_list = []
+    single_list = []
+    for communications in communications_list:
+        single_list.append(communications)
+        index = index + 1
+
+        if index % 10 == 0:
+            result_list.append(single_list)
+            single_list = []
+
+    if index % 10 != 0:
+        result_list.append(single_list)
+
     result = {}
     result['communications_type'] = communications_type
-    result['communications_list'] = communications_list
+    result['communications_list'] = result_list[page_num - 1]
 
-    return render(request, 'communications.html', {'result': result, 'menu': menu})
+    page_len = len(result_list)
+    page_start = 1
+    page_end = page_len
+    jump = {}
+
+    if page_num > 2:
+        page_start = page_num - 2
+    if (page_len - page_num) > 2:
+        page_end = page_num + 1
+
+    if page_start > 1:
+        jump["left_ellipsis"] = True
+    if page_end < page_len:
+        jump["right_ellipsis"] = True
+
+    if page_num != 1:
+        jump["pre_page"] = True
+    if page_num != page_len:
+        jump["next_page"] = True
+
+    page_range = range(page_start, page_end + 1)
+
+    return render(request, 'communications.html', {'result': result, 'menu': menu, 'page_range': page_range, 'current_page': page_num, 
+                                        'jump': jump})
 
 
 @csrf_exempt
