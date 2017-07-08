@@ -13,6 +13,40 @@
 
 <div class="wrap">
     <div class="main mainBox">
+        <div class="blog">
+            {% for index, case in result.case_list %}
+            <div class="blog_list">
+                <h2 onclick="location.href='?case_type={{ result.case_type }}' + '&id=' + {{ case.id }}"><i>{{ index }}</i>{{ case.title }}</h2>
+                <h5>{{ case.submit_time }}</h5>
+            </div>
+            {% endfor %}
+            <ul class="pagination">
+                {% if jump.pre_page %}
+                <li><a href="?case_type={{ result.case_type }}&page_num={{ current_page | add:-1 }}">&laquo;</a></li>
+                {% endif %}
+                {% if jump.left_ellipsis %}
+                <li><a>...</a></li>
+                {% endif %}
+                {% for page_num in page_range %}
+                {% if page_num == current_page %}
+                <li><a style="background:red" href="?case_type={{ result.case_type }}&page_num={{ page_num }}">{{ page_num}}</a></li>
+                {% else %}
+                <li><a href="?case_type={{ result.case_type }}&page_num={{ page_num }}">{{ page_num}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if jump.right_ellipsis %}
+                <li><a>...</a></li>
+                {% endif %}
+                {% if jump.next_page %}
+                <li><a href="?case_type={{ result.case_type }}&page_num={{ current_page | add:1 }}">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="wrap">
+    <div class="main mainBox">
         {% for single_list in result.case_list %}
         <div class="span_of_3">
             {% for case in single_list %}
@@ -25,7 +59,8 @@
                     {% endif %}
                 <div class="span1_of_3_text">
                     <h3><a href="?case_type={{ result.case_type }}&id={{ case.id }}">{{ case.title }}</a></h3>
-                    <p>{{ case.content | truncatewords:"20" }}...</p>
+                    <p id="intro_{{ case.id }}">...</p>
+                    <div id="content_{{ case.id }}" style="display: none">{{ case.content }}</div>
                 </div>
                 <div class="ser_btn">
                     <a class="button  ser_btn1" href="?case_type={{ result.case_type }}&id={{ case.id }}">查看详情</a>
@@ -35,5 +70,5 @@
         </div>
         {% endfor %}
     </div>
-</div>
+</div> -->
 {% endblock %}
