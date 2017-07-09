@@ -669,6 +669,9 @@ p.para{
 	color: #c9c9c9;
 	margin: 12px 0;
 }
+.span1_of_4 p.mail{
+	text-transform: lowercase;
+}
 .span1_of_4 p a{
 	color: #c9c9c9;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -689,6 +692,7 @@ p.para{
 }
 .span1_of_4 p.btm1{
 	margin-bottom: 4%;
+	text-transform : lowercase;
 }
 .f_nav1{
 	margin-top: 2%;
