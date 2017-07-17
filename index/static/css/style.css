@@ -781,6 +781,7 @@ big {
 }
 .top{
 	padding: 2% 4%;
+	padding-bottom: 0.4%;
 }
 .top h2{
 	font-size: 2em;
@@ -1043,6 +1044,14 @@ span.adr_img{
 	background: #006df2;
 	color: #ffffff;
 }
+.contact-form>.cont_usBox{
+	margin-bottom: 2em;
+}
+.contact-form>.cont_usBox>li{
+	line-height: 2.4em;
+	font-size: 1.4em;
+	color: #777;
+}
 /* start details */
 .details{
 	display: block;
@@ -1184,6 +1193,12 @@ span.adr_img{
     color: #555555;
     text-indent: 2em;
     font-family: "仿宋";
+}
+.p-t-l{
+	padding-top: 0.2%;
+}
+.p-b-l{
+	padding-bottom: 0.2%;
 }
 /***** Media Quries *****/
 /***** Media Quries *****/
