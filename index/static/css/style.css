@@ -246,22 +246,32 @@ background-size: 100% 100%; */
 	margin-top: 5px;
 	width: 58px;
 }
-.headFont{
-	height: 58px;float: left;
+.headFont .headF_title{
+	height: 35px;float: left;
 	margin-top:5px;
 	margin-left:20px;
-	font-size: 38px;
-	line-height: 58px;
+	font-size: 22px;
+	line-height: 42px;
 	width: 500px;
 	color: #0066df;
 	font-weight: bold;
 }
-.headFont>span{
+
+.headFont>.headF_title>span{
 	font-size: 18px;
 	padding-left:10%;
 	font-family:"微软雅黑";
 	color: #f89b10;
 	font-weight:;
+    float: right;
+}
+.headFont>a{
+    font-size: 14px;
+    color: #f89b10;
+    padding-left:4%;
+}
+.headFont>a:hover{
+    text-decoration: underline;
 }
 .h_search input[type="text"]{
 	-webkit-appearance: none;
