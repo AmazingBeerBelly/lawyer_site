@@ -12,7 +12,7 @@
 </style>
 
 <div id="da-slider" class="da-slider">
-    <div class="da-slide">
+    <!-- <div class="da-slide">
         <p><img src="{% static 'images/nav-1.png' %}" alt=""></p>
     </div>
     <div class="da-slide">
@@ -23,7 +23,12 @@
     </div>
     <div class="da-slide">
         <p><img src="{% static 'images/nav-4.png' %}" alt=""></p>
+    </div> -->
+    {% for image in result.index_images %}
+    <div class="da-slide">
+        <p><a href="{{ image.url }}"><img src="{{ image.image.url }}" alt=""></a></p>
     </div>
+    {% endfor %}
     <nav class="da-arrows">
         <span class="da-arrows-prev"></span>
         <span class="da-arrows-next"></span>

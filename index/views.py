@@ -28,6 +28,10 @@ def index_view(request):
     result['image_url'] = lawyer.image.url
     result['description'] = lawyer.description
     menu = "index_menu"
+
+    index_images = IndexImages.objects.all()
+    result['index_images'] = index_images
+    
     return render(request, 'index.html', {'result': result, 'menu': menu})
 
 def about_us_view(request):

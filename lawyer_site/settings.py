@@ -89,6 +89,10 @@ SUIT_CONFIG = {
         # Keep original label and models
         'sites',
 
+        {'label': u'首页图片', 'icon': 'icon-cog', 'models': (
+            {'model': 'index.IndexImages', 'label': u'轮播图'},
+        )},
+
         {'label': u'律师介绍', 'icon': 'icon-cog', 'models': (
             {'model': 'index.Lawyer', 'label': u'律师个人'},
             {'model': 'index.LawyerTeam', 'label': u'律师团队'},

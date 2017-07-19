@@ -8,6 +8,11 @@ from datetime import datetime
 import pytz
 
 
+@admin.register(IndexImages)
+class IndexImagesAdmin(admin.ModelAdmin):
+    pass
+
+
 # Lawyer Module
 @admin.register(Lawyer)
 class LawyerAdmin(admin.ModelAdmin):

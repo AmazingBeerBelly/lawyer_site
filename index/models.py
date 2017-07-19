@@ -4,6 +4,14 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class IndexImages(models.Model):
+    image = models.ImageField(upload_to="images/", blank=True, verbose_name="图片")
+    url = models.CharField(max_length=255, blank=True, verbose_name="链接")
+
+    def __unicode__(self):
+        return u'%s' % self.image
+
+
 # Lawyer Module
 class Lawyer(models.Model):
     name = models.CharField(max_length=20, verbose_name="姓名")
