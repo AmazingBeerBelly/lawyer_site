@@ -247,28 +247,34 @@ background-size: 100% 100%; */
 	width: 58px;
 }
 .headFont .headF_title{
-	height: 35px;float: left;
-	margin-top:5px;
+	height: 50px;
+	margin-top:15px;
 	margin-left:20px;
 	font-size: 22px;
-	line-height: 42px;
-	width: 500px;
+	line-height: 20px;
 	color: #0066df;
 	font-weight: bold;
+	width: 36%;
+	float: left;
 }
 
-.headFont>.headF_title>span{
+.headFont span.lsrx{
 	font-size: 18px;
 	padding-left:10%;
 	font-family:"微软雅黑";
 	color: #f89b10;
 	font-weight:;
-    float: right;
+    float: left;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	width: 40%;
+	margin-top: 8px;
 }
-.headFont>a{
-    font-size: 14px;
+.headFont>.headF_title>a{
+    font-size: 15px;
     color: #f89b10;
-    padding-left:4%;
+    padding-left:1%;
 }
 .headFont>a:hover{
     text-decoration: underline;
