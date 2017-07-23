@@ -10,7 +10,7 @@ import pytz
 
 @admin.register(IndexImages)
 class IndexImagesAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'url', 'index_content',)
 
 @admin.register(IndexContent)
 class IndexContentAdmin(admin.ModelAdmin):

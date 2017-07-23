@@ -20,7 +20,6 @@ class IndexImages(models.Model):
         return u'%s' % self.image
 
 
-
 # Lawyer Module
 class Lawyer(models.Model):
     name = models.CharField(max_length=20, verbose_name="姓名")
