@@ -11,28 +11,12 @@
     }
 </style>
 
-<div id="da-slider" class="da-slider">
-    <!-- <div class="da-slide">
-        <p><img src="{% static 'images/nav-1.png' %}" alt=""></p>
-    </div>
-    <div class="da-slide">
-        <p><img src="{% static 'images/nav-2.png' %}" alt=""></p>
-    </div>
-    <div class="da-slide">
-        <p><img src="{% static 'images/nav-3.png' %}" alt=""></p>
-    </div>
-    <div class="da-slide">
-        <p><img src="{% static 'images/nav-4.png' %}" alt=""></p>
-    </div> -->
+<div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+  <ul class="am-slides">
     {% for image in result.index_images %}
-    <div class="da-slide">
-        <p><a href="{{ image.url }}"><img src="{{ image.image.url }}" alt=""></a></p>
-    </div>
+    <li><img src="{{ image.image.url }}" alt=""></li>
     {% endfor %}
-    <nav class="da-arrows">
-        <span class="da-arrows-prev"></span>
-        <span class="da-arrows-next"></span>
-    </nav>
+  </ul>
 </div>
 
 <div class="wrap">
