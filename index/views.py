@@ -41,6 +41,13 @@ def index_view(request):
     # else:
     return render(request, 'index.html', {'result': result, 'menu': menu})
 
+def index_content_view(request):
+    index_content_id = request.GET.get('id', '')
+    index_content = IndexContent.objects.filter(pk=index_content_id).first()
+    result = {}
+    result['content'] = index_content.content
+    return render(request, 'index_content.html', {'result': result})
+
 def about_us_view(request):
     about_type = request.GET.get('about_type', '')
 

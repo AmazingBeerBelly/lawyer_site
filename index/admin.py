@@ -12,6 +12,16 @@ import pytz
 class IndexImagesAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(IndexContent)
+class IndexContentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title',)
+    class Media:
+        js = (
+            'js/kindeditor-4.1.10/kindeditor-all.js',
+            'js/kindeditor-4.1.10/lang/zh_CN.js',
+            'js/kindeditor-4.1.10/config.js',
+        )
+
 
 # Lawyer Module
 @admin.register(Lawyer)

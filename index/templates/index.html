@@ -14,7 +14,11 @@
 <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
   <ul class="am-slides">
     {% for image in result.index_images %}
-    <li><a href="{{ image.url }}"><img src="{{ image.image.url }}" alt=""></a></li>
+        {% if image.url %}
+        <li><a href="{{ image.url }}"><img src="{{ image.image.url }}" alt=""></a></li>
+        {% else %}
+        <li><a href="/index_content/?id={{ image.index_content.id }}"><img src="{{ image.image.url }}" alt=""></a></li>
+        {% endif %}
     {% endfor %}
   </ul>
 </div>

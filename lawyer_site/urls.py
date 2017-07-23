@@ -25,6 +25,7 @@ urlpatterns = [
 
     url(r'^$', views.index_view),
     url(r'^index/$', views.index_view),
+    url(r'^index_content/$', views.index_content_view),
     url(r'^about_us/$', views.about_us_view),
     url(r'^news/$', views.news_view),
     url(r'^contact_us/$', views.contact_us_view),

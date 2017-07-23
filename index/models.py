@@ -4,12 +4,21 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class IndexContent(models.Model):
+    title = models.CharField(max_length=50, blank=True, verbose_name="标题")
+    content = models.TextField(blank=True, verbose_name="内容")
+
+    def __unicode__(self):
+        return u'%s' % self.title
+
 class IndexImages(models.Model):
     image = models.ImageField(upload_to="images/", blank=True, verbose_name="图片")
     url = models.CharField(max_length=255, blank=True, verbose_name="链接")
+    index_content = models.ForeignKey(IndexContent, blank=True, verbose_name="对应内容(若存在链接，则以链接为主)")
 
     def __unicode__(self):
         return u'%s' % self.image
+
 
 
 # Lawyer Module

@@ -105,6 +105,7 @@ SUIT_CONFIG = {
 
         {'label': u'首页图片', 'icon': 'icon-cog', 'models': (
             {'model': 'index.IndexImages', 'label': u'轮播图'},
+            {'model': 'index.IndexContent', 'label': u'轮播内容'},
         )},
 
         {'label': u'律师介绍', 'icon': 'icon-cog', 'models': (
