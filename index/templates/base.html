@@ -5,26 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="{% static 'css/fonts_google_apis.css' %}" rel="stylesheet" type="text/css" media="all" />
         <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-        <link rel="stylesheet" type="text/css" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/amazeui.min.css' %}">
         <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
         <link href="{% static 'font/font.css' %}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/slider.css' %}" />
         <script type="text/javascript" src="{% static 'js/modernizr.custom.28468.js' %}"></script>
-        <!-- // <script type="text/javascript" src="{% static 'js/jquery.cslider.js' %}"></script> -->
-        <script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>
+        <script type="text/javascript" src="{% static 'js/amazeui.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
         <script type="text/javascript">
-            // $(function() {
-            
-            //     $('#da-slider').cslider({
-            //         autoplay    : true,
-            //         bgincrement : 450
-            //     });
-            
-            // });
-            
             $(window).load(function() {
             $("#flexiselDemo1").flexisel();
             $("#flexiselDemo2").flexisel({
