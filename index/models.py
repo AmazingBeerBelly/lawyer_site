@@ -32,6 +32,13 @@ class LawyerTeam(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+class LawFirm(models.Model):
+    name = models.CharField(max_length=50, blank=True, verbose_name="律所名称")
+    description = models.TextField(blank=True, verbose_name="律所简介")
+
+    def __unicode__(self):
+        return u'%s' % self.name
+
 
 # Law Service
 class LawService(models.Model):

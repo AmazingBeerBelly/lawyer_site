@@ -52,10 +52,14 @@ def about_us_view(request):
         result['name'] = lawyer.name
         result['description'] = lawyer.description
         result['image_url'] = lawyer.image.url
-    else:
+    elif about_type == u'专业团队':
         lawyer_team = LawyerTeam.objects.all().first()
         result['name'] = lawyer_team.name
         result['description'] = lawyer_team.description
+    else:
+        law_firm = LawFirm.objects.all().first()
+        result['name'] = law_firm.name
+        result['description'] = law_firm.description
     return render(request, 'about_us.html', {'result': result, 'menu': menu})
 
 def service_view(request):

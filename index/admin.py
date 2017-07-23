@@ -32,6 +32,15 @@ class LawyerTeamAdmin(admin.ModelAdmin):
             'js/kindeditor-4.1.10/description_config.js',
         )
 
+@admin.register(LawFirm)
+class LawFirmAdmin(admin.ModelAdmin):
+    class Media:
+        js = (
+            'js/kindeditor-4.1.10/kindeditor-all.js',
+            'js/kindeditor-4.1.10/lang/zh_CN.js',
+            'js/kindeditor-4.1.10/description_config.js',
+        )
+
 
 
 # Law Service

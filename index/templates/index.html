@@ -14,7 +14,7 @@
 <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
   <ul class="am-slides">
     {% for image in result.index_images %}
-    <li><img src="{{ image.image.url }}" alt=""></li>
+    <li><a href="{{ image.url }}"><img src="{{ image.image.url }}" alt=""></a></li>
     {% endfor %}
   </ul>
 </div>

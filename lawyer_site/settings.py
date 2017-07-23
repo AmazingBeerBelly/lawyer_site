@@ -110,6 +110,7 @@ SUIT_CONFIG = {
         {'label': u'律师介绍', 'icon': 'icon-cog', 'models': (
             {'model': 'index.Lawyer', 'label': u'律师个人'},
             {'model': 'index.LawyerTeam', 'label': u'律师团队'},
+            {'model': 'index.LawFirm', 'label': u'律所介绍'},
         )},
 
         {'label': u'律师服务', 'icon': 'icon-cog', 'models': (
