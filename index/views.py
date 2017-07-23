@@ -45,6 +45,7 @@ def index_content_view(request):
     index_content_id = request.GET.get('id', '')
     index_content = IndexContent.objects.filter(pk=index_content_id).first()
     result = {}
+    result['title'] = index_content.title
     result['content'] = index_content.content
     return render(request, 'index_content.html', {'result': result})
 
