@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .para{
+        font-size: 1em;
+        color: #555555;
+        line-height: 2em;
+        text-align: left;
+        text-indent: 2em;
+    }
+</style>
+
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="details">
+            <div class="det_text">
+                <div class="para">{{ result.content | safe }}</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
