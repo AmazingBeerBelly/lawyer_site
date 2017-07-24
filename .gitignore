@@ -4,3 +4,4 @@ index/migrations/
 index/.DS_Store
 .idea/
 index/static/.DS_Store
+db.sqlite3
