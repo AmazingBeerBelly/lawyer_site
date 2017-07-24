@@ -36,6 +36,7 @@ class Lawyer(models.Model):
 class LawyerTeam(models.Model):
     name = models.CharField(max_length=50, blank=True, verbose_name="团队名称")
     description = models.TextField(blank=True, verbose_name="团队简介")
+    image = models.ImageField(upload_to="photo/", blank=True, verbose_name="团队照片")
 
     def __unicode__(self):
         return u'%s' % self.name
@@ -43,6 +44,7 @@ class LawyerTeam(models.Model):
 class LawFirm(models.Model):
     name = models.CharField(max_length=50, blank=True, verbose_name="律所名称")
     description = models.TextField(blank=True, verbose_name="律所简介")
+    image = models.ImageField(upload_to="photo/", blank=True, verbose_name="律所照片")
 
     def __unicode__(self):
         return u'%s' % self.name
