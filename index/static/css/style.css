@@ -1262,6 +1262,10 @@ span.adr_img{
     }
 }
 @media only screen and (max-width: 1366px) {
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.wrap{
 		width:95%;
 	}
@@ -1290,6 +1294,10 @@ span.adr_img{
 }
 }
 @media only screen and (max-width: 1280px) {
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.wrap{
 		width:95%;
 	}
@@ -1308,6 +1316,10 @@ span.adr_img{
 	}
 }
 @media only screen and (max-width: 1024px) {
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.main{
 		padding: 8% 4%;
 	}
@@ -1334,6 +1346,10 @@ span.adr_img{
 
 }
 @media only screen and (max-width: 800px) {
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.main{
 		padding: 8% 4%;
 	}
@@ -1356,6 +1372,10 @@ span.adr_img{
 	}
 }
 @media only screen and (max-width: 640px){
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.wrap{
 		width:95%;
 	}
@@ -1389,6 +1409,10 @@ span.adr_img{
 	}
 }
 @media only screen and (max-width: 480px) {
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.wrap{
 		width:95%;
 	}
@@ -1448,6 +1472,10 @@ span.adr_img{
 	}
 }
 @media only screen and (max-width: 320px) {
+	.am-slides{
+    max-height: 450px;
+    overflow: hidden;
+}
 	.wrap{
 		width:95%;
 	}
