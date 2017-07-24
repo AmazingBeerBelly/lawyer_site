@@ -68,6 +68,7 @@ def about_us_view(request):
         law_firm = LawFirm.objects.all().first()
         result['name'] = law_firm.name
         result['description'] = law_firm.description
+        result['image_url'] = law_firm.image.url
     return render(request, 'about_us.html', {'result': result, 'menu': menu})
 
 def service_view(request):
