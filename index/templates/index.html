@@ -10,16 +10,32 @@
         text-indent: 2em;
     }
 </style>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/ydxLazyLoad.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("[lazyLoadSrc]").YdxLazyLoad({
+			onShow: function () {
+				$(this).parent().next().hide()
+			}
+		});
+	});
+</script>
 
 <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
   <ul class="am-slides">
     {% for image in result.index_images %}
         {% if image.url %}
-        <li><a href="{{ image.url }}"><img id="bannerTabimg" class="antimoderate" src="{{ image.image.url }}" data-antimoderate-idata="{{ image.image.url }};base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAAsADwDAREAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAAAwEEBQYAAgcI/8QANxAAAgECBAMFBAgHAAAAAAAAAQIDBBEABRIhBjFRBxMiQZEUFiNxJFJhYnKBsfAVMjOCwdHh/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QALBEAAgECBAUDAwUAAAAAAAAAAAECAxEEEhMxFCFBUWFxodEiMpFCgbHB8P/aAAwDAQACEQMRAD8A7LS1sdreIHy2x0XPOHgqFI8M6g9DjZjWM/igibSyhz1GAYf0udUDw6xIhj3BKnzBsRcdDibHQOqz2BAfZy4YfmMFIDZAzcfZbEW76ugkkA8EJkXxHl5YLsZXJP3kyzMIjLSNDPEh0q8YuCbC42wIoM5DNs/qL+GGK3pimUkeTct7Y+IVrYmalpohezSxpM0iq2zaA0nOwxC536aJiftp4zqaxWirGSA/1IUVU8IO+jnvbrjDKgPKHth4xmqoaCjm2maOKnM+jVqJCAvIRaxJ33/PBG4ddeRa8gi7TMpr5XzGvp6rLRqZ6ZauEL3jvqvaEySeIm2wxaDS+5HbSwNHNynGp4+pfyiLz+PtEnWr4jp0TL4KZGnmhFYJXsL+LTI2q2kkWt8sTfoavhcP+mpH0Wb4Oc+9GaxSK50EoQd1/Tl0wpzOhEOnHXE0dMtGmYTUtOC8gWmBjbU+9yVN+Ywbk3QiL798Y8zxFWITuVu5xrgdKPYiqLK6GaQRRySFw2ll0k2tzvYbeuIOpYf1LAvDFCqx3nd3TmiKArfi1ayfUY5nihZVYrYMvD2UaCJYCb8m7zl18t8bi/AHifASnyDIEYtHSabAjvEdlNj5emNxY8cVZ3St6GycPcOoGLZYSG/ktOVsfInwnDcaLrx7G9PwblVfUmJJJKR2W8V31pfzA5HG4spSqZ3bqN6/szr6Yk0dZHKfFyOlttrHVb9cVjWuNVi47lfkynOaRu5MRBHPcj/BxS6Jai7k4MwEa6e70r9VFsMeW4s5WpDumrDLqDssKINTX/588LkFHD1CBdpVZBbwDnvyO4wMowOfMECqqtYdeuBYW5jVh7g/FuQOX7+eBYFxIszuux+IhupGMFO3MlqbiKOp2qfBKLat7K69R0Ix105Hq0MRqb2RjZpSobTMkTeSMRqt9uLjTwMXz2/DKskBUX72YqPrOT6DAudSgu7/ACEeM92CZpFsdlDb3PXngMbTv1Zp7LUJHf2mVSD9y9z5csA2il/l8CdxXWGmsY6Qb+BDcnrt5YYDpPv7IPFT13dKTWENex+FHvfkTfyGMLpefZG75fXSKv07SfMrDHY/v7Mbl2F0PPsg0FGYgntFQs2nmGRBc9b8/TGtcKw668/2ErK4RygMmq4uDvy9DikYXBOpFPodYpeFuH6iLW9FGD924wlBqe6938la14bf18BDwLwu2p/Yhf8AE/8AvHoRwcGupwyxMk+gkfBHDjKfo1v7mxCVCKLa8ipcY5ZQZdXxU9JEI07rUeZJJY8/TEakUtjooyzbjGCvkp6caEQ2XWCb31KxseeBDmJV7gfeKs9mMxiiaV+9LuQxuUjFjbVa/wAsUcDmdR2KxxLxnmixKaaKCmlE0K99GrF7M24+Izgc/IXw0UczqNlS49zjMJuJ6oiVolURqsaO+kDQOrE8z1xsqAptH//Z">
-       </a></li>
+       <li><a href="{{ image.url }}">
+            <img lazyLoadSrc="{{ image.image.url }}">
+            </a>
+            <span class="loading"></span>
+        </li>
         {% else %}
-        <li><a href="/index_content/?id={{ image.index_content.id }}"><img id="bannerTabimg" class="antimoderate" src="{{ image.image.url }}" data-antimoderate-idata="{{ image.image.url }};base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAAsADwDAREAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAAAwEEBQYAAgcI/8QANxAAAgECBAMFBAgHAAAAAAAAAQIDBBEABRIhBjFRBxMiQZEUFiNxJFJhYnKBsfAVMjOCwdHh/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QALBEAAgECBAUDAwUAAAAAAAAAAAECAxEEEhMxFCFBUWFxodEiMpFCgbHB8P/aAAwDAQACEQMRAD8A7LS1sdreIHy2x0XPOHgqFI8M6g9DjZjWM/igibSyhz1GAYf0udUDw6xIhj3BKnzBsRcdDibHQOqz2BAfZy4YfmMFIDZAzcfZbEW76ugkkA8EJkXxHl5YLsZXJP3kyzMIjLSNDPEh0q8YuCbC42wIoM5DNs/qL+GGK3pimUkeTct7Y+IVrYmalpohezSxpM0iq2zaA0nOwxC536aJiftp4zqaxWirGSA/1IUVU8IO+jnvbrjDKgPKHth4xmqoaCjm2maOKnM+jVqJCAvIRaxJ33/PBG4ddeRa8gi7TMpr5XzGvp6rLRqZ6ZauEL3jvqvaEySeIm2wxaDS+5HbSwNHNynGp4+pfyiLz+PtEnWr4jp0TL4KZGnmhFYJXsL+LTI2q2kkWt8sTfoavhcP+mpH0Wb4Oc+9GaxSK50EoQd1/Tl0wpzOhEOnHXE0dMtGmYTUtOC8gWmBjbU+9yVN+Ywbk3QiL798Y8zxFWITuVu5xrgdKPYiqLK6GaQRRySFw2ll0k2tzvYbeuIOpYf1LAvDFCqx3nd3TmiKArfi1ayfUY5nihZVYrYMvD2UaCJYCb8m7zl18t8bi/AHifASnyDIEYtHSabAjvEdlNj5emNxY8cVZ3St6GycPcOoGLZYSG/ktOVsfInwnDcaLrx7G9PwblVfUmJJJKR2W8V31pfzA5HG4spSqZ3bqN6/szr6Yk0dZHKfFyOlttrHVb9cVjWuNVi47lfkynOaRu5MRBHPcj/BxS6Jai7k4MwEa6e70r9VFsMeW4s5WpDumrDLqDssKINTX/588LkFHD1CBdpVZBbwDnvyO4wMowOfMECqqtYdeuBYW5jVh7g/FuQOX7+eBYFxIszuux+IhupGMFO3MlqbiKOp2qfBKLat7K69R0Ix105Hq0MRqb2RjZpSobTMkTeSMRqt9uLjTwMXz2/DKskBUX72YqPrOT6DAudSgu7/ACEeM92CZpFsdlDb3PXngMbTv1Zp7LUJHf2mVSD9y9z5csA2il/l8CdxXWGmsY6Qb+BDcnrt5YYDpPv7IPFT13dKTWENex+FHvfkTfyGMLpefZG75fXSKv07SfMrDHY/v7Mbl2F0PPsg0FGYgntFQs2nmGRBc9b8/TGtcKw668/2ErK4RygMmq4uDvy9DikYXBOpFPodYpeFuH6iLW9FGD924wlBqe6938la14bf18BDwLwu2p/Yhf8AE/8AvHoRwcGupwyxMk+gkfBHDjKfo1v7mxCVCKLa8ipcY5ZQZdXxU9JEI07rUeZJJY8/TEakUtjooyzbjGCvkp6caEQ2XWCb31KxseeBDmJV7gfeKs9mMxiiaV+9LuQxuUjFjbVa/wAsUcDmdR2KxxLxnmixKaaKCmlE0K99GrF7M24+Izgc/IXw0UczqNlS49zjMJuJ6oiVolURqsaO+kDQOrE8z1xsqAptH//Z">
-        </a>
+        <li><a href="/index_content/?id={{ image.index_content.id }}">
+                <img lazyLoadSrc="{{ image.image.url }}">
+             </a>
+             <span class="loading"></span>
         </li>
         {% endif %}
     {% endfor %}
