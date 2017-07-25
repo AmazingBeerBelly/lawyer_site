@@ -88,6 +88,13 @@
         </style>
         <link href="{% static 'css/nav.css' %}" rel="stylesheet" type="text/css" />
         <link href="{% static 'css/page.css' %}" rel="stylesheet" type="text/css" />
+
+        <!---->
+         <script src=" {% static 'js/antimoderate.js' %} "></script>
+         <script>
+         var img = document.getElementById('bannerTabimg');
+         AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"));
+         </script>
     </head>
     <body>
         <input hidden id="menu" value="{{ menu }}"></input>
