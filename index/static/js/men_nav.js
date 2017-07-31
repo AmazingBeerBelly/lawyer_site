@@ -1,7 +1,4 @@
 $(function(){
-	/////////////点击导航显示二级导航
-
-	/////////////////
    var _width = $(window).width();
 	if(_width > 1600){
 		 $(".er01").css({"left":"102px"})
