@@ -95,15 +95,17 @@
          var img = document.getElementById('bannerTabimg');
          AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"));
          </script>
+        <script type="text/javascript" src="{% static 'js/men_nav.js' %}"></script>
     </head>
     <body>
-        <input hidden id="menu" value="{{ menu }}"></input>
+        <input hidden id="menu" value="{{ menu }}">
         <div class="headBox">
             <div class="headmain">
                 <div class="h_search">
                 </div>
                 <div class="headFont"><div class="headF_title"><p>赣州律师网</p><a href="www.igzls.com">www.igzls.com</a></div>
                 <span class="lsrx">律师热线：18046661308</span>
+                    <img class="navBtn" src="{% static 'images/menu-btn.png' %}">
                 </div>
             </div>
         </div>
@@ -114,7 +116,7 @@
                         <li class="" id="index_menu"><a href="/index/">首页</a></li>
                         <li id="lawyer_menu">
                             <a href="/about_us/?about_type=律师个人">律师介绍</a>
-                            <ul class="" style="left:102px;">
+                            <ul class="er01" style="left:102px;">
                                 <li><a href="/about_us/?about_type=律师个人" class="colB">律师个人</a></li>
                                 <li><a href="/about_us/?about_type=专业团队" class="colB">专业团队</a></li>
                                 <li><a href="/about_us/?about_type=律所" class="colB">律所介绍</a></li>
@@ -122,7 +124,7 @@
                         </li>
                         <li class="" id="service_menu">
                             <a href="/service/?service_type=诉讼业务">律师服务</a>
-                            <ul class="" style="left:204px;">
+                            <ul class="er02" style="left:204px;">
                                 <li><a href="/service/?service_type=诉讼业务" class="colB">诉讼业务</a></li>
                                 <li><a href="/service/?service_type=非诉业务" class="colB">非诉业务</a></li>
                                 <li><a href="/service/?service_type=委托流程" class="colB">委托流程</a></li>
@@ -130,14 +132,14 @@
                         </li>
                         <li class="" id="case_menu">
                             <a href="/success_cases/?case_type=律师案例">成功案例</a>
-                            <ul class="" style="left:306px;">
+                            <ul class="er03" style="left:306px;">
                                 <li><a href="/success_cases/?case_type=律师案例" class="colB">律师案例</a></li>
                                 <li><a href="/success_cases/?case_type=经典案例" class="colB">经典案例</a></li>
                             </ul>
                         </li>
                         <li class="" id="law_menu">
                             <a href="/law_list/?law_type=法律规定">法律法规</a>
-                            <ul class="" style="left:306px;">
+                            <ul class="er04" style="left:306px;">
                                 <li><a href="/law_list/?law_type=法律规定" class="colB">法律规定</a></li>
                                 <li><a href="/law_list/?law_type=行政法规" class="colB">行政法规</a></li>
                                 <li><a href="/law_list/?law_type=司法解释" class="colB">司法解释</a></li>
@@ -146,7 +148,7 @@
                         </li>
                         <li class="" id="news_menu">
                             <a href="/news/?news_type=行业动态">法律新闻</a>
-                            <ul class="" style="left:408px;">
+                            <ul class="er05" style="left:408px;">
                                 <li><a href="/news/?news_type=行业动态" class="colB">行业动态</a></li>
                                 <li><a href="/news/?news_type=法治社会" class="colB">法治社会</a></li>
                                 <li><a href="/news/?news_type=法律前沿" class="colB">法律前沿</a></li>
@@ -154,7 +156,7 @@
                         </li>
                         <li class="" id="communications_menu">
                             <a href="/communications/?communications_type=业务交流">律师交流</a>
-                            <ul class="" style="left:510px;">
+                            <ul class="er06" style="left:510px;">
                                 <li><a href="/communications/?communications_type=业务交流" class="colB">业务交流</a></li>
                                 <li><a href="/communications/?communications_type=活动交流" class="colB">活动交流</a></li>
                             </ul>

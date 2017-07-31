@@ -25,7 +25,14 @@
         var bl = bl*700;
         $(".loading").height(bl)
 	});
-
+window.onresize = function(){
+    		//loading高度
+        var img_W = $(window).width();
+        //alert(img_W);
+        var bl = img_W/1920;
+        var bl = bl*700;
+        $(".loading").height(bl)
+}
 </script>
 
 <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
