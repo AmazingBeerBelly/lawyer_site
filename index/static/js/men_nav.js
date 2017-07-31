@@ -1,4 +1,7 @@
 $(function(){
+	/////////////点击导航显示二级导航
+
+	/////////////////
    var _width = $(window).width();
 	if(_width > 1600){
 		 $(".er01").css({"left":"102px"})
@@ -18,14 +21,7 @@ $(function(){
 	 	 $(".navBtn").click(function(){
 	 	 	$(".down").toggle();
 		 })
-		$('body').click(function(e) {
-		var target = $(e.target);
-		// 如果#overlay或者#btn下面还有子元素，可使用
-		// !target.is('#btn *') && !target.is('#overlay *')
-		if(!target.is('.navBtn') && !target.is('.down')) {
-		   if ( $('.h_menu').is(':visible') ) $('.down').hide();
-		}
-	});
+
 		 $(".er01").css({"left":"70px","top":"48px"})
 		 $(".er02").css({"left":"70px","top":"94px"})
 		 $(".er03").css({"left":"70px","top":"140px"})
