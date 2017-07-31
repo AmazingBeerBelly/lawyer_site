@@ -255,23 +255,29 @@ color:#2076e5; */
 
 }
 @media only screen and (max-width: 1024px) {
-
+	body{
+		 background-size: 100% 68px;
+	}
 	.navBtn{
 		display: block;
 		float: left;
 		margin-top: 24px;
 		cursor: pointer;
 	}
+    ..h_menu{
+        padding-left: 0;
+    }
 	.down{
 		display: none;
 	}
 	.wrapLine{
 		position: fixed;
 		top: 60px;
+		right: 0px;
 		z-index: 9999;
 	}
 .down li{
-   clear:both
+   clear:both;
 }
 .menu ul li{
 	-webkit-border-radius:8px;
@@ -289,18 +295,23 @@ color:#2076e5; */
 	width: 30%;
 
 }
+    .headmain{
+    width: 530px;
+}
 	.headFont span.lsrx{
 	width: 40%;
 		padding-left: 0;
 	}
 }
 @media only screen and (max-width: 480px) {
+.headmain{
+    width: 250px;
+}
 .headFont .headF_title{
-	width: 21%;
+	width: 80%;
 }
 		.headFont span.lsrx{
-	width: 40%;
-		padding-left: 0;
+            display: none;
 	}
 }
 @media only screen and (max-width: 320px) {

@@ -31,7 +31,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
 	background: url(../images/bg.jpg) no-repeat top center;
-    background-size: 100% auto;
+    background-size: 100% 168px;
 }
 .text-center{
 	text-align: center;
