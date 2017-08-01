@@ -285,6 +285,13 @@ color:#2076e5; */
 	border-radius:8px;
 
 }
+	.wrap{
+		width: 100%;
+	}
+	.h_menu{
+		width:100%;
+		padding-left: 0;
+	}
 }
 @media only screen and (max-width: 800px) {
 .footer{
@@ -296,6 +303,7 @@ color:#2076e5; */
 	width: 30%;
 
 }
+
     .headmain{
     width: 530px;
 }
