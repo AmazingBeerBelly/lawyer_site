@@ -294,6 +294,9 @@ color:#2076e5; */
 		width:100%;
 		padding-left: 0;
 	}
+	.am-direction-nav{
+		display: none;
+	}
 }
 @media only screen and (max-width: 800px) {
 .footer{
