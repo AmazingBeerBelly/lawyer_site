@@ -231,7 +231,7 @@ color:#2076e5; */
 
 }
 .menu{
-   width: 564px;
+   width: 635px;
 	}
 .menu ul li{
     width: 70px;
@@ -258,11 +258,13 @@ color:#2076e5; */
 	body{
 		 background-size: 100% 68px;
 	}
+
 	.navBtn{
 		display: block;
 		float: left;
 		margin-top: 24px;
 		cursor: pointer;
+
 	}
     .h_menu{
         padding-left: 0;
@@ -303,10 +305,12 @@ color:#2076e5; */
 	width: 30%;
 
 }
-
     .headmain{
     width: 530px;
 }
+        .menu{
+    width: 580px;
+ }
 	.headFont span.lsrx{
 	width: 40%;
 		padding-left: 0;
@@ -316,6 +320,9 @@ color:#2076e5; */
 .headmain{
     width: 250px;
 }
+    .menu{
+    width: 300px;
+ }
 .headFont .headF_title{
 	width: 80%;
 }
