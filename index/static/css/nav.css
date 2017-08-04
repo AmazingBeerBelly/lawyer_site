@@ -315,22 +315,26 @@ color:#2076e5; */
     width: 580px;
  }
 	.headFont span.lsrx{
-	width: 40%;
+	width: 45%;
 		padding-left: 0;
 	}
 }
 @media only screen and (max-width: 480px) {
 .headmain{
-    width: 250px;
+    width: 315px;
 }
     .menu{
-    width: 300px;
+    width: 358px;
  }
 .headFont .headF_title{
-	width: 80%;
+	width: 36%;
+	font-size: 18px;
+}
+.headFont .headF_title>a{
+	font-size: 12px;
 }
 		.headFont span.lsrx{
-            display: none;
+           font-size: 12px;
 	}
 }
 @media only screen and (max-width: 320px) {
