@@ -258,9 +258,60 @@ color:#2076e5; */
 	body{
 		 background-size: 100% 68px;
 	}
+	.menu{
+		width: 235px;
+		height:135px;
+	}
+	.headBox{
+		height: 115px;
+		background: url(../images/bg.jpg) no-repeat top center;
+		background-size: 100% 100%;
+	}
+	.headmain{
+		height:100%;
+	}
+	.menu ul li{
+		width: 58px;
+		height: 22px;
+		line-height: 22px;
+	}
+    .menu ul li a, .menu ul li a:visited{
+		font-size: 12px;
+    }
+	.menu ul li:hover a, .menu ul li.active a{
+		font-size: 12px;
+    }
 
+	.menu ul li:hover ul li a{
+		line-height: 22px;
+        background: #48c0f0;
+		color: #fff;
+	}
+	.menu ul li:hover ul li a:hover{
+		height:22px;
+		line-height: 22px;
+		color: #F1F1F1;
+		margin-top: 0px;
+	}
+	.menu ul li:hover a, .menu ul li.active a{
+		width: 58px;
+		height: 22px;
+		line-height: 22px;
+		margin-top: 0px;
+
+	}
+
+	.menu ul li:hover ul{
+		width: 58px;
+		top: 22px;
+		background: #48c0f0;
+	}
+	.menu ul li:hover ul li{
+		height: 22px;
+		line-height: 22px;
+		width: 58px;
+	}
 	.navBtn{
-		display: block;
 		float: left;
 		margin-top: 24px;
 		cursor: pointer;
@@ -270,17 +321,18 @@ color:#2076e5; */
         padding-left: 0;
     }
 	.down{
-		display: none;
+
 	}
 	.wrapLine{
-		position: fixed;
+		position:absolute;
 		top: 60px;
-		right: 0px;
+
 		z-index: 9999;
 	}
 .down li{
-   clear:both;
+
 }
+
 .menu ul li{
 	-webkit-border-radius:8px;
 	-moz-border-radius:8px;
@@ -311,9 +363,7 @@ color:#2076e5; */
     .headmain{
     width: 530px;
 }
-        .menu{
-    width: 580px;
- }
+
 	.headFont span.lsrx{
 	width: 45%;
 		padding-left: 0;
@@ -323,9 +373,7 @@ color:#2076e5; */
 .headmain{
     width: 315px;
 }
-    .menu{
-    width: 358px;
- }
+
 .headFont .headF_title{
 	width: 36%;
 	font-size: 18px;

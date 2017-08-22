@@ -15,15 +15,15 @@ $(function(){
 		 $(".er05").css({"left":"288px"})
          $(".er06").css({"left":"360px"})
 	 }else if(_width <= 1024){
-	 	 $(".navBtn").click(function(){
-	 	 	$(".down").toggle();
-		 })
+	 	 //$(".navBtn").click(function(){
+	 	 //	$(".down").toggle();
+		// })
 
-		 $(".er01").css({"left":"70px","top":"48px"})
-		 $(".er02").css({"left":"70px","top":"94px"})
-		 $(".er03").css({"left":"70px","top":"140px"})
-		 $(".er04").css({"left":"70px","top":"188px"})
-		 $(".er05").css({"left":"70px","top":"234px"})
-         $(".er06").css({"left":"70px","top":"284px"})
+		 $(".er01").css({"left":"59px"})
+		 $(".er02").css({"left":"117px"})
+		 $(".er03").css({"left":"175px"})
+		 $(".er04").css({"left":"1px","top":"44px"})
+		 $(".er05").css({"left":"59px","top":"44px"})
+         $(".er06").css({"left":"117px","top":"44px"})
 	 }
 })
