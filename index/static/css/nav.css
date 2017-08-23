@@ -358,6 +358,7 @@ color:#2076e5; */
 @media only screen and (max-width: 640px) {
 .headFont .headF_title{
 	width: 30%;
+	font-size: 15px;
 
 }
     .headmain{
