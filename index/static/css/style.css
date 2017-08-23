@@ -267,10 +267,10 @@ background-size: 100% 100%; */
 	font-weight:;
     float: left;
 	display: block;
-	height: 50px;
-	line-height: 50px;
+	height: 30px;
+	line-height: 30px;
 	width: 48%;
-	margin-top: 8px;
+	margin-top: 1px;
 }
 .headFont>.headF_title>a{
     font-size: 15px;

@@ -31,13 +31,14 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
 	background: url(../images/bg.jpg) no-repeat top center;
-	background-size:100% auto; 
+    background-size: 100% 168px;
 }
 .text-center{
 	text-align: center;
 }
 .text-left{
 	text-align: left;
+
 }
 .text-right{
 	text-align: right;
@@ -266,10 +267,10 @@ background-size: 100% 100%; */
 	font-weight:;
     float: left;
 	display: block;
-	height: 50px;
-	line-height: 50px;
+	height: 30px;
+	line-height: 30px;
 	width: 48%;
-	margin-top: 8px;
+	margin-top: 1px;
 }
 .headFont>.headF_title>a{
     font-size: 15px;
@@ -1216,6 +1217,7 @@ span.adr_img{
 .p-b-l{
 	padding-bottom: 0.2%;
 }
+
 /***** Media Quries *****/
 /***** Media Quries *****/
 /***** Media Quries *****/
@@ -1234,6 +1236,24 @@ span.adr_img{
     .mainBox{
     	min-height: 450px;
     }
+.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
+}
+}
+@media only screen and (max-width: 1600px) {
+   .loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
+}
 }
 @media only screen and (max-width: 1440px) {
    .index_font{
@@ -1245,6 +1265,7 @@ span.adr_img{
     font-family: "仿宋";
 }
 }
+
 @media only screen and (max-width: 1440px) {
 .index_font{
 	font-size: 1.2em;
@@ -1260,11 +1281,27 @@ span.adr_img{
     .span1_of_4:nth-child(4){
         width: 37%;
     }
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
+}
 }
 @media only screen and (max-width: 1366px) {
 	.am-slides{
     max-height: 450px;
     overflow: hidden;
+}
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
 }
 	.wrap{
 		width:95%;
@@ -1292,11 +1329,20 @@ span.adr_img{
     text-indent: 2em;
     font-family: "仿宋";
 }
+
 }
 @media only screen and (max-width: 1280px) {
 	.am-slides{
     max-height: 450px;
     overflow: hidden;
+}
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
 }
 	.wrap{
 		width:95%;
@@ -1319,6 +1365,14 @@ span.adr_img{
 	.am-slides{
     max-height: 450px;
     overflow: hidden;
+}
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
 }
 	.main{
 		padding: 8% 4%;
@@ -1350,6 +1404,14 @@ span.adr_img{
     max-height: 450px;
     overflow: hidden;
 }
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
+}
 	.main{
 		padding: 8% 4%;
 	}
@@ -1375,6 +1437,14 @@ span.adr_img{
 	.am-slides{
     max-height: 450px;
     overflow: hidden;
+}
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
 }
 	.wrap{
 		width:95%;
@@ -1412,6 +1482,14 @@ span.adr_img{
 	.am-slides{
     max-height: 450px;
     overflow: hidden;
+}
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
 }
 	.wrap{
 		width:95%;
@@ -1475,6 +1553,14 @@ span.adr_img{
 	.am-slides{
     max-height: 450px;
     overflow: hidden;
+}
+	.loading{
+    width: 100%;
+    height: 100%;
+    display: block;
+	margin:0 auto;
+    z-index: 3;
+    background: #fff url("../images/loading.gif") no-repeat center center;
 }
 	.wrap{
 		width:95%;
