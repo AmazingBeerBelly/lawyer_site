@@ -377,7 +377,10 @@ color:#2076e5; */
 
 .headFont .headF_title{
 	width: 36%;
-	font-size: 12px;
+	font-size: 18px;
+}
+.headFont>.headF_title>a{
+	padding-left：2%
 }
 .headFont .headF_title>a{
 	font-size: 12px;
