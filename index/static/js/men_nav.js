@@ -19,11 +19,11 @@ $(function(){
 	 	 //	$(".down").toggle();
 		// })
 
-		 $(".er01").css({"left":"59px"})
-		 $(".er02").css({"left":"117px"})
-		 $(".er03").css({"left":"175px"})
-		 $(".er04").css({"left":"1px","top":"44px"})
-		 $(".er05").css({"left":"59px","top":"44px"})
-         $(".er06").css({"left":"117px","top":"44px"})
+		 $(".er01").css({"left":"66px"})
+		 $(".er02").css({"left":"131px"})
+		 $(".er03").css({"left":"196px"})
+		 $(".er04").css({"left":"1px","top":"48px"})
+		 $(".er05").css({"left":"66px","top":"48px"})
+         $(".er06").css({"left":"131px","top":"48px"})
 	 }
 })
