@@ -35,11 +35,11 @@ def index_view(request):
     index_images = IndexImages.objects.all()
     result['index_images'] = index_images
 
-    # user_agent = get_user_agent(request)
-    # if user_agent.is_mobile:
-    #     return render(request, 'test.html', {})
-    # else:
-    return render(request, 'index.html', {'result': result, 'menu': menu})
+    user_agent = get_user_agent(request)
+    if user_agent.is_mobile:
+        return render(request, 'mobile_index.html', {'result': result, 'menu': menu})
+    else:
+        return render(request, 'index.html', {'result': result, 'menu': menu})
 
 def index_content_view(request):
     index_content_id = request.GET.get('id', '')

@@ -13,6 +13,7 @@ class IndexContent(models.Model):
 
 class IndexImages(models.Model):
     image = models.ImageField(upload_to="images/", blank=True, verbose_name="图片")
+    mobile_image = models.ImageField(upload_to="images/", blank=True, verbose_name="手机图片")
     url = models.CharField(max_length=255, blank=True, verbose_name="链接")
     index_content = models.ForeignKey(IndexContent, null=True, blank=True, verbose_name="对应内容(若存在链接，则以链接为主)")
 

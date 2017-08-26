@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .para{
+        font-size: 1em;
+        color: #555555;
+        line-height: 2em;
+        text-align: left;
+        text-indent: 2em;
+    }
+</style>
+<script type="text/javascript" src="../static/js/ydxLazyLoad.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("[lazyLoadSrc]").YdxLazyLoad({
+			onShow: function () {
+				$(this).parent().next().hide()
+			}
+		});
+		//loading高度
+        var img_W = $(window).width();
+        //alert(img_W);
+        var bl = img_W/1920;
+        var bl = bl*700;
+        $(".loading").height(bl)
+	});
+window.onresize = function(){
+    		//loading高度
+        var img_W = $(window).width();
+        //alert(img_W);
+        var bl = img_W/1920;
+        var bl = bl*700;
+        $(".loading").height(bl)
+}
+</script>
+
+<div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+  <ul class="am-slides">
+    {% for image in result.index_images %}
+        {% if image.url %}
+       <li><a href="{{ image.url }}">
+            <img lazyLoadSrc="{{ image.mobile_image.url }}">
+            </a>
+            <span class="loading"></span>
+        </li>
+        {% else %}
+        <li><a href="/index_content/?id={{ image.index_content.id }}">
+                <img lazyLoadSrc="{{ image.mobile_image.url }}">
+             </a>
+             <span class="loading"></span>
+        </li>
+        {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="wrap">
+    <div class="main mainBox">
+        <div class="main_box">
+            <div class="main_pic">
+                <img src="{{ result.image_url }}" alt="">
+                <p><span>{{ result.name | safe }}律师</span><br />
+                    <span>江西南芳律师事务所主办律师</span><br />
+                    <span>水西中心小学法制副校长</span><br />
+                </p>
+            </div>
+            <div class="main_text">
+                <h2>金牌律师</h2>
+                <div class="abt-para">
+                    <div class="det_text">
+                        <div class="index_font">{{ result.description | safe }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
