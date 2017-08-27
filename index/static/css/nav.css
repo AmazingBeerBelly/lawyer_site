@@ -260,10 +260,10 @@ color:#2076e5; */
 	}
 	.menu{
 		width: 340px;
-		height:140px;
+		height:172px;
 	}
 	.headBox{
-		height: 115px;
+		height: 122px;
 		background: url(../images/bg.jpg) no-repeat top center;
 		background-size: 100% 100%;
 	}
@@ -272,8 +272,8 @@ color:#2076e5; */
 	}
 	.menu ul li{
 		width: 85px;
-		height: 24px;
-		line-height: 24px;
+		height: 28px;
+		line-height: 28px;
 	}
     .menu ul li a, .menu ul li a:visited{
 		font-size: 12px;
@@ -290,24 +290,24 @@ color:#2076e5; */
 		height:22px;
 		line-height: 22px;
 		color: #F1F1F1;
-		margin-top: 0px;
+		margin-top: 4px;
 	}
 	.menu ul li:hover a, .menu ul li.active a{
 		width: 60px;
 		height: 20px;
 		line-height: 20px;
-		margin-top: 2px;
+		margin-top: 5px;
 
 	}
 
 	.menu ul li:hover ul{
 		width: 84px;
-		top: 22px;
+		top: 28px;
 		height:0
 	}
 	.menu ul li:hover ul li{
-		height: 22px;
-		line-height: 22px;
+		height: 28px;
+		line-height: 28px;
 		width: 84px;
 	}
 	.navBtn{

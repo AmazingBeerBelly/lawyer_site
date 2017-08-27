@@ -22,9 +22,9 @@ $(function(){
 		 $(".er01").css({"left":"86px"})
 		 $(".er02").css({"left":"170px"})
 		 $(".er03").css({"left":"256px"})
-		 $(".er04").css({"left":"1px","top":"48px"})
-		 $(".er05").css({"left":"86px","top":"48px"})
-         $(".er06").css({"left":"170px","top":"48px"})
+		 $(".er04").css({"left":"1px","top":"56px"})
+		 $(".er05").css({"left":"86px","top":"56px"})
+         $(".er06").css({"left":"170px","top":"56px"})
 
 	 }
 })
