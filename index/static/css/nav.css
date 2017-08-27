@@ -266,6 +266,7 @@ color:#2076e5; */
 		height: 122px;
 		background: url(../images/bg.jpg) no-repeat top center;
 		background-size: 100% 100%;
+		z-index: 10;
 	}
 	.headmain{
 		height:100%;
@@ -340,6 +341,7 @@ color:#2076e5; */
 }
 	.wrap{
 		width: 100%;
+		z-index: 9999;
 	}
 	.h_menu{
 		width:100%;
