@@ -260,7 +260,7 @@ color:#2076e5; */
 	}
 	.menu{
 		width: 340px;
-		height:172px;
+		height:57px;
 	}
 	.headBox{
 		height: 122px;
@@ -326,7 +326,7 @@ color:#2076e5; */
 	.wrapLine{
 		position:absolute;
 		top: 60px;
-
+        overflow: inherit;
 		z-index: 9999;
 	}
 .down li{
@@ -346,6 +346,7 @@ color:#2076e5; */
 	.h_menu{
 		width:100%;
 		padding-left: 0;
+		overflow: inherit;
 	}
 	.am-direction-nav{
 		display: none;
