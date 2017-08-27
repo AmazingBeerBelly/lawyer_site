@@ -358,7 +358,7 @@ color:#2076e5; */
 @media only screen and (max-width: 640px) {
 .headFont .headF_title{
 	width: 30%;
-	font-size: 15px;
+	font-size: 22px;
 
 }
     .headmain{
@@ -367,6 +367,7 @@ color:#2076e5; */
 
 	.headFont span.lsrx{
 	width: 45%;
+		font-size: 12px;
 		padding-left: 0;
 	}
 }
@@ -378,9 +379,6 @@ color:#2076e5; */
 .headFont .headF_title{
 	width: 36%;
 	font-size: 18px;
-}
-.headFont>.headF_title>a{
-	padding-left：2%
 }
 .headFont .headF_title>a{
 	font-size: 12px;

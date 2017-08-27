@@ -25,5 +25,6 @@ $(function(){
 		 $(".er04").css({"left":"1px","top":"48px"})
 		 $(".er05").css({"left":"66px","top":"48px"})
          $(".er06").css({"left":"131px","top":"48px"})
+
 	 }
 })
