@@ -15,6 +15,14 @@
         <script type="text/javascript" src="{% static 'js/amazeui.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
         <script type="text/javascript">
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b6fdd5b57dbcb6cbe101c20012a31560";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+            
             $(window).load(function() {
                 $("#lawyer_menu").click(function() {
                     console.log("lawyer_menu");
